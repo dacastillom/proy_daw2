@@ -88,7 +88,7 @@ public class PedidoController {
 	
 	@RequestMapping("/registraPedido")
 	@ResponseBody
-	public Mensaje registra(int idCliente, String nomCliente, String apeCliente,String fecEntrega, String lugEntrega,String estado){
+	public Mensaje registra(int idCliente, String nomCliente, String dniCliente,String fecEntrega, String lugEntrega,String estado){
 	//Los parámetros viajan al .jsp con el mismo valor.
 		Mensaje mensaje = new Mensaje();
 	
@@ -109,7 +109,7 @@ public class PedidoController {
 		Cliente objCliente = new Cliente();
 		objCliente.setIdCliente(idCliente);
 		objCliente.setNombres(nomCliente);
-		objCliente.setApellidos(apeCliente);
+		objCliente.setDni(dniCliente);
 		
 		
 		Pedido obj = new Pedido();

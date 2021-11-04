@@ -59,4 +59,9 @@ public class ProductoServicioImpl implements ProductoServicio {
 		return repositorio.listaproducto(filtro, pegable);
 	}
 
+	@Override
+	public List<Producto> obtienePorNombre(String nombre, int idProducto) {
+		return repositorio.findByNombreAndIdProducto(nombre, idProducto);
+	}
+
 }

@@ -17,6 +17,7 @@ public interface ProductoServicio {
 	public abstract List<Producto> listaProductoPorNombreLike(String filtro);
 
 	
+	public abstract List<Producto> obtienePorNombre(String nombre, int idProducto);
 	//adicionado 10 Junio - David Castillo
 	public List<Producto> listaproducto(String filtro, Pageable pageable);
 }

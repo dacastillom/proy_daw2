@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,13 +33,13 @@ public class CrudProductoController {
 	@RequestMapping("/consultaCrudProducto")
 	@ResponseBody
 	public List<Producto> lisaProductos(String filtro){
-		return productoServicio.listaProductoPorNombreLike("%"+filtro+"%");
+		return productoServicio.listaProductoPorNombreLike(filtro.trim() + "%");
 	}
 	
 
 	@RequestMapping("/registraCrudProducto")
 	@ResponseBody
-	public Map<String, Object> registral(Producto obj){
+	public Map<String, Object> insertaProducto(Producto obj){
 		Map<String, Object> salida = new HashMap<String, Object>();
 				
 		try {
@@ -66,14 +67,22 @@ public class CrudProductoController {
 		Map<String, Object> salida = new HashMap<String, Object>();
 				
 		try {
-			Producto objsalida = productoServicio.insertaActualizaProducto(obj);
-			if (objsalida==null) {
-				salida.put("MENSAJE", "Registro act  erroneo");
+			List<Producto> lista = productoServicio.obtienePorNombre(obj.getNombre(), obj.getIdProducto());
+			if (CollectionUtils.isEmpty(lista)) {
+				Producto objSalida = productoServicio.insertaActualizaProducto(obj);
+				if(objSalida == null) {
+				 salida.put("MENSAJE", "Registro act  erroneo");					
+				
 			}else {
 				salida.put("MENSAJE", "Registro act exitoso");
 			}
 			
-		} catch (Exception e) {
+		} else {
+			salida.put("mensaje", Constantes.MENSAJE_ACT_YA_EXISTE); 
+		 }
+		}
+		
+		catch (Exception e) {
 			salida.put("MENSAJE", "Registro act exitoso");
 			e.printStackTrace();
 		} finally {
@@ -87,11 +96,11 @@ public class CrudProductoController {
 	@RequestMapping("/eliminarCrudProducto")
 	@ResponseBody
 	public Map<String, Object> elimina(int id){
-		Map<String, Object> salida = new HashMap<String, Object>();
+		Map<String, Object> salida = new HashMap<>();
 				
 		try {
-			Optional<Producto> opt = productoServicio.obtienePorId(id);
-			if(opt.isPresent()) {
+			Optional<Producto> optProducto = productoServicio.obtienePorId(id);
+			if(optProducto.isPresent()) {
 				productoServicio.eliminaProducto(id);
 				salida.put("MENSAJE", "Registro eli exitoso");
 			}else {
@@ -102,8 +111,8 @@ public class CrudProductoController {
 			salida.put("MENSAJE", "Registro reg  erroneo");
 			e.printStackTrace();
 		} finally {
-			List<Producto> lst = productoServicio.listaProducto();
-			salida.put("lista", lst);
+			List<Producto> lista = productoServicio.listaProducto();
+			salida.put("lista", lista);
 		}
 				
 		return salida;

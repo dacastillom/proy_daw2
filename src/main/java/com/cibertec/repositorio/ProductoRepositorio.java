@@ -18,4 +18,11 @@ public interface ProductoRepositorio extends JpaRepository<Producto, Integer>{
 	@Query("Select x from Producto x where x.nombre like :var_fil")
 	public List<Producto> listaproducto(@Param("var_fil") String filtro, Pageable pageable);
 
+	
+	public abstract List<Producto> findByNombre(String nombre);
+	
+	public abstract List<Producto> findByNombreAndIdProducto(String nombre, int idProducto);
+	
+	public abstract List<Producto> findByNombreOrIdProducto(String nombre, int idProducto);
+	
 }

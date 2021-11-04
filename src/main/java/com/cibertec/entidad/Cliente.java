@@ -27,7 +27,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCliente;
 	private String nombres;
-	private String apellidos;
+	private String dni;
 	private String correo;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -42,8 +42,8 @@ public class Cliente {
 	@JoinColumn(name = "idUbigeo")
 	private Ubigeo ubigeo;
 	
-	public String getNombresApellidos() {
-		return nombres.concat(" - ").concat(apellidos);
+	public String getNombresDni() {
+		return nombres.concat(" - ").concat(dni);
 	}
 	
 	
@@ -63,12 +63,12 @@ public class Cliente {
 		this.nombres = nombres;
 	}
 
-	public String getApellidos() {
-		return apellidos;
+	public String getDni() {
+		return dni;
 	}
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public String getCorreo() {

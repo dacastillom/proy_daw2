@@ -47,9 +47,9 @@
 								</div>
 							</div> 
 							<div class="form-group  col-md-4" >
-								<label class="col-lg-2 control-label">Apellido</label>
+								<label class="col-lg-2 control-label">DNI</label>
 								<div class="col-lg-8" >
-									<input type="text"  id="id_cliente_apellido" class="form-control" readonly="readonly"/>
+									<input type="text"  id="id_cliente_dni" class="form-control" readonly="readonly"/>
 								</div>
 							</div>
 							<div class="form-group col-md-4">
@@ -197,7 +197,7 @@
 															<tr>
 																<th style="width: 15%">Id</th>
 																<th style="width: 40%">Nombre</th>
-																<th style="width: 35%">Apellido</th>
+																<th style="width: 35%">DNI</th>
 																<th style="width: 10%"></th>
 															</tr>
 														</thead>
@@ -399,7 +399,7 @@ $("#id_btnAgregar").click(function (){
 //Al pulsar el botón agregar
 $("#id_btnRegistrar").click(function (){
 	var var_cli = $("#id_cliente_id").val();
-	var var_ape = $("#id_cliente_apellido").val();
+	var var_ape = $("#id_cliente_dni").val();
 	var var_nom = $("#id_cliente_nombre").val();
 	var var_nom_com =  var_nom + ' ' + var_ape;
 	
@@ -439,7 +439,7 @@ $("#id_btnRegistrar").click(function (){
 					$("#id_table_boleta_body").empty();
 					$("#id_cliente_id").val("-1");
 					$("#id_cliente_nombre").val("");
-					$("#id_cliente_apellido").val("");
+					$("#id_cliente_dni").val("");
 					$("#id_fecha_entrega").val("");
 					$("#id_lugar_entrega").val("");
 					$("#id_estado").val("");
@@ -466,7 +466,7 @@ function muestraCliente(){
 	//Se añade los clientes a la tabla
 	$.getJSON("cargaCliente",{"filtro":var_cliente}, function (data){
 		$.each(data, function(index, item){
-			$('#id_table_cliente').append("<tr><td>" +item.idCliente + "</td><td>" +item.nombres + "</td><td>" +item.apellidos + "</td><td><button type='button' class='btn btn-default' aria-label='Left Align' onclick=\"f_seleccione_cliente('"+ item.idCliente+"','"+ item.nombres+"','"+ item.apellidos+"');\" ><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button></td></tr>");
+			$('#id_table_cliente').append("<tr><td>" +item.idCliente + "</td><td>" +item.nombres + "</td><td>" +item.dni + "</td><td><button type='button' class='btn btn-default' aria-label='Left Align' onclick=\"f_seleccione_cliente('"+ item.idCliente+"','"+ item.nombres+"','"+ item.dni+"');\" ><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button></td></tr>");
 		});
 	});
 }
@@ -486,10 +486,10 @@ function muestraProducto(){
 }
 
 //Al pulsar selecciona cliente
-function f_seleccione_cliente(id,nombres,apellidos){
+function f_seleccione_cliente(id,nombres,dni){
 	$("#id_cliente_id").val(id);
 	$("#id_cliente_nombre").val(nombres);
-	$("#id_cliente_apellido").val(apellidos);
+	$("#id_cliente_dni").val(dni);
 	$("#idBuscaCliente").modal("hide");
 }
 

@@ -27,7 +27,7 @@ public class RegistraClienteController {
 	@ResponseBody
 	public Map<String,Object> insertaCliente(Cliente obj){
 		Map<String,Object> salida = new HashMap<String, Object>();
-		Cliente objsalida = clienteServicio.insertaCliente(obj);
+		Cliente objsalida = clienteServicio.insertaActualizaCliente(obj);
 		if(objsalida ==null) {
 			salida.put("MENSAJE", "registro erroneo");
 		}else {

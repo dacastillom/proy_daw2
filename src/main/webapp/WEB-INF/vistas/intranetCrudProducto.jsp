@@ -299,15 +299,21 @@ function agregarGrilla(lista){
 	    });
 }
 
+function eliminar(id){	
+	$('input[id=id_elimina]').val(id);
+	$('#idFormElimina').submit();
+}
+
 
 function eliminar(id){	
 	mostrarMensajeConfirmacion(MSG_ELIMINAR, accionEliminar,null,id);
 }
 
-function accionEliminar(id){	
+function accionEliminar(id){
+	$('#id_elimina').val(id);
     $.ajax({
           type: "POST",
-          url: "eliminaCrudProducto", 
+          url: "eliminarCrudProducto", 
           data: {"id":id},
           success: function(data){
         	  agregarGrilla(data.lista);
@@ -327,6 +333,38 @@ function editar(id,nombre,serie,precio,stock,idMarca, idPais){
 	$('#id_act_stock').val(stock);
 	$('#id_act_marca').val(idMarca);
 	$('#id_act_pais').val(idPais);
+	
+	
+
+	
+     $.getJSON("listaMarca", {}, function(data){
+    		$.each(data, function(i,obj){
+    			if(obj ==  idMarca){
+    			
+    			$("#id_act_marca").append("<option selected value='" + obj+ "'>"+obj+"</option>")
+    			 }else{
+    			$("#id_act_marca").append("<option value='" + obj+ "'>"+obj+"</option>")
+    			 }
+    		});
+    	});
+
+
+    	$.getJSON("listaPais", {}, function(data){
+    		$.each(data, function(i,obj){
+    			if(obj ==  idPais){
+    			
+    			$("#id_reg_pais").append("<option selected value='" + obj+ "'>"+obj+"</option>")
+    		 }else{
+    			$("#id_act_pais").append("<option value='" + obj+ "'>"+obj+"</option>")
+    		 }
+    		});
+    	});
+	
+	
+	
+	
+	
+	
 	$('#id_div_modal_actualiza').modal("show");
 }
 
@@ -444,22 +482,6 @@ $('#id_form_registra').bootstrapValidator({
                 }
             }
         },
-        "marca.idMarca": {
-    		selector : '#id_reg_marca',
-            validators: {
-            	notEmpty: {
-                    message: 'La marca un campo obligatorio'
-                },
-            }
-        },
-        "pais.idPais": {
-    		selector : '#id_reg_pais',
-            validators: {
-            	notEmpty: {
-                    message: 'El pais es un campo obligatorio'
-                },
-            }
-        },
     }
 });
 
@@ -529,22 +551,6 @@ $('#id_form_actualiza').bootstrapValidator({
                 	min : 2,
                 	max : 20
                 }
-            }
-        },
-        "marca.idMarca": {
-    		selector : '#id_act_marca',
-            validators: {
-            	notEmpty: {
-                    message: 'La marca un campo obligatorio'
-                },
-            }
-        },
-        "pais.idPais": {
-    		selector : '#id_act_pais',
-            validators: {
-            	notEmpty: {
-                    message: 'El pais un campo obligatorio'
-                },
             }
         },
     }

@@ -1,5 +1,6 @@
 package com.cibertec.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,7 +38,8 @@ public class CrudClienteController {
 		Map<String, Object> salida = new HashMap<String, Object>();
 
 		try {
-			Cliente objsalida = clienteServicio.insertaCliente(obj);
+			obj.setFechaRegistro(new Date());
+			Cliente objsalida = clienteServicio.insertaActualizaCliente(obj);
 			if (objsalida == null) {
 				salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
 			} else {
@@ -55,12 +58,13 @@ public class CrudClienteController {
 
 	@ResponseBody
 	@RequestMapping("/eliminaCrudCliente")
-	public Map<String, Object> elimina(int id) {
+	public Map<String, Object> elimina(String id) {
 		Map<String, Object> salida = new HashMap<>();
 		try {
-			Optional<Cliente> optCliente = clienteServicio.obtenerPorId(id);
+			int idCliente = Integer.parseInt(id);
+			Optional<Cliente> optCliente = clienteServicio.obtenerPorId(idCliente);
 			if (optCliente.isPresent()) {
-				clienteServicio.eliminarCliente(id);
+				clienteServicio.eliminarCliente(idCliente);
 				salida.put("mensaje", Constantes.MENSAJE_ELI_EXITOSO);
 			} else {
 				salida.put("mensaje", Constantes.MENSAJE_ELI_ERROR);
@@ -77,15 +81,23 @@ public class CrudClienteController {
 
 	@ResponseBody
 	@RequestMapping("/actualizaCrudCliente")
-	public Map<String, Object> actualizar(Cliente obj) {
-		Map<String, Object> salida = new HashMap<>();
+	public Map<String, Object> actualiza(Cliente obj) {
+		Map<String,Object> salida = new HashMap<String,Object>();
 		try {
-			Cliente optCliente = clienteServicio.insertaActualizaCliente(obj);
-			if (optCliente == null) {
-				salida.put("mensaje", Constantes.MENSAJE_ACT_ERROR);
-			} else {
+			
+			List<Cliente> lista = clienteServicio.obtienePorDni(obj.getDni(), obj.getIdCliente());
+			if (CollectionUtils.isEmpty(lista)) {
+				Cliente objSalida = clienteServicio.insertaActualizaCliente(obj);
+				if(objSalida == null) {    
+					
+					salida.put("mensaje", Constantes.MENSAJE_ACT_ERROR);
+				}else {
 				salida.put("mensaje", Constantes.MENSAJE_ACT_EXITOSO);
 			}
+				} else {
+					salida.put("mensaje", Constantes.MENSAJE_ACT_YA_EXISTE); 
+				}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			salida.put("mensaje", Constantes.MENSAJE_ACT_ERROR);

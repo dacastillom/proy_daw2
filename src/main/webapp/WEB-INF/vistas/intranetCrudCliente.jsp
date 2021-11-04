@@ -56,13 +56,13 @@
                             <thead>
                                 <tr>
                                     <th style="width: 5%">ID</th>
-                                    <th style="width: 37%">Nombres</th>
-                                    <th style="width: 12%">Apellidos</th>
-                                    <th style="width: 20%">Correo</th>
-                                    <th style="width: 40%">Fec de registro.</th>
+                                    <th style="width: 12%">Nombres</th>
+                                    <th style="width: 12%">DNI</th>
+                                    <th style="width: 15%">Correo</th>
+                                    <th style="width: 12%">Fec de registro.</th>
                                     <th style="width: 8%">Dirección </th>
                                     <th style="width: 8%">Estado </th>
-                                    <th style="width: 20%">ID de ubigeo </th>
+                                    <th style="width: 12%">ID de ubigeo </th>
                                     <th style="width: 8%"> Actualiza </th>
                                     <th style="width: 8%"> Elimina </th>
                                 </tr>
@@ -104,11 +104,11 @@
                                                     <input class="form-control" id="id_reg_nombres" name="nombres"
                                                         placeholder="Ingrese los nombres" type="text" maxlength="40" />
                                                 </div>
-                                                <label class="col-lg-2 control-label" for="id_reg_apellidos"
-                                                    style="text-align: left;">Apellidos</label>
+                                                <label class="col-lg-2 control-label" for="id_reg_dni"
+                                                    style="text-align: left;">DNI</label>
                                                 <div class="col-lg-4">
-                                                    <input class="form-control" id="id_reg_apellidos" name="apellidos"
-                                                        placeholder="Ingrese los apellidos" type="text"
+                                                    <input class="form-control" id="id_reg_dni" name="dni"
+                                                        placeholder="Ingrese el DNI " type="text"
                                                         maxlength="40" />
                                                 </div>
                                             </div>
@@ -120,7 +120,7 @@
                                                         placeholder="Ingrese el correo" type="text" />
                                                 </div>
                                                 <label class="col-lg-2 control-label" for="id_reg_direccion"
-                                                    style="text-align: left;">Dirección</label>
+                                                    style="text-align: left;">Direcci�nn</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_reg_direccion" name="direccion"
                                                         placeholder="Ingrese su dirección" type="text" maxlength="40" />
@@ -218,11 +218,11 @@
                                                     <input class="form-control" id="id_act_nombres" name="nombres"
                                                         placeholder="Ingrese los nombres" type="text" maxlength="40" />
                                                 </div>
-                                                <label class="col-lg-2 control-label" for="id_act_apellidos"
-                                                    style="text-align: left;">Apellidos</label>
+                                                <label class="col-lg-2 control-label" for="id_act_dni"
+                                                    style="text-align: left;">DNI</label>
                                                 <div class="col-lg-4">
-                                                    <input class="form-control" id="id_act_apellidos" name="apellidos"
-                                                        placeholder="Ingrese los apellidos" type="text"
+                                                    <input class="form-control" id="id_act_dni" name="dni"
+                                                        placeholder="Ingrese el DNI" type="text"
                                                         maxlength="40" />
                                                 </div>
                                             </div>
@@ -433,7 +433,7 @@
                 columns: [
                     { data: "idCliente" },
                     { data: "nombres" },
-                    { data: "apellidos" },
+                    { data: "dni" },
                     { data: "correo" },
                     {
                         data: (row, type, val, meta) => new Date(row.fechaRegistro).toLocaleString('es-PE'), className: 'text-center'
@@ -445,7 +445,7 @@
                     { data: "ubigeo.idUbigeo" },
                     {
                         data: function (row, type, val, meta) {
-                            const salida = '<button type="button" style="width: 90px" class="btn btn-info btn-sm" onclick="editar(\'' + row.idCliente + '\',\'' + row.nombres + '\',\'' + row.apellidos + '\',\'' + row.correo + '\',\'' + row.direccion + '\',\'' + row.estado + '\',\'' + row.ubigeo.departamento + '\',\'' + row.ubigeo.provincia + '\',\'' + row.ubigeo.distrito + '\')">Editar</button>';
+                            const salida = '<button type="button" style="width: 90px" class="btn btn-info btn-sm" onclick="editar(\'' + row.idCliente + '\',\'' + row.nombres + '\',\'' + row.dni + '\',\'' + row.correo + '\',\'' + row.direccion + '\',\'' + row.estado + '\',\'' + row.ubigeo.departamento + '\',\'' + row.ubigeo.provincia + '\',\'' + row.ubigeo.distrito + '\')">Editar</button>';
                             return salida;
                         }, className: 'text-center'
                     },
@@ -458,17 +458,22 @@
             });
         }
 
+        function eliminar(id){	
+        	$('input[id=id_elimina]').val(id);
+        	$('#idFormElimina').submit();
+        }
+        
         function eliminar(id) {
             mostrarMensajeConfirmacion(MSG_ELIMINAR, accionEliminar, null, id);
         }
 
-        function accionEliminar(id) {
+        function accionEliminar(id, estado) {
+        	$('#id_elimina').val(id);
             $.ajax({
                 type: "POST",
                 url: "eliminaCrudCliente",
-                data: { "id": id },
+                data: {"id":id},
                 success: function (data) {
-                    $('#id_txt_filtro').val('');
                     agregarGrilla(data.lista);
                     mostrarMensaje(data.mensaje);
 
@@ -479,37 +484,53 @@
             });
         }
 
-        function editar(idCliente, nombres, apellidos, correo, direccion, estado, departamento, provincia, distrito) {
-
-            $.getJSON("listaProvincias", { "departamento": departamento }, function (data) {
-                $.each(data, function (i, item) {
-                    $("#id_act_provincia").append("<option value='" + item + "'>" + item + "</option>");
-                });
-            });
-
-            $.getJSON("listaDistritos", { "departamento": departamento, "provincia": provincia }, function (data) {
-                $.each(data, function (i, item) {
-                    $("#id_act_distrito").append("<option value='" + item.idUbigeo + "'>" + item.distrito + "</option>");
-                });
-            });
-
+        function editar(idCliente, nombres, dni, correo, direccion, estado, departamento, provincia, distrito) {
             $('#id_ID').val(idCliente);
             $('#id_act_nombres').val(nombres);
-            $('#id_act_apellidos').val(apellidos);
+            $('#id_act_dni').val(dni);
             $('#id_act_correo').val(correo);
             $('#id_act_direccion').val(direccion);
             $('#id_act_estado').val(estado);
+            $("#id_act_provincia").empty();
+            $("#id_act_distrito").empty();
+            
+            $("#id_act_provincia").append("<option value=' ' >[Seleccione Provincia]</option>");
+            $("#id_act_distrito").append("<option value=' ' >[Seleccione Distrito]</option>");
 
+            
             $('#id_act_departamento').val(departamento);
-            $("#id_act_provincia").append("<option selected value='" + provincia + "'>" + provincia + "</option>");
-            $("#id_act_distrito").append("<option selected value='" + distrito + "'>" + distrito + "</option>");
+            
+            
+            
+            $.getJSON("listaProvincias",{"departamento":departamento},function(data){
+                $.each(data,function(i, obj){
+                    if(obj ==  provincia){
+                          $("#id_act_provincia").append("<option selected value='" + obj+ "'>"+obj+"</option>");
+                    }else{
+                         $("#id_act_provincia").append("<option value='" + obj+ "'>"+obj+"</option>");
+                    }
+                });
+                });
 
+            $.getJSON("listaDistritos",{"provincia":provincia,"departamento":departamento},function(data){
+                $.each(data,function(index,obj){
+                   if(obj.distrito ==  distrito){
+            							$("#id_act_distrito").append("<option selected value='"+obj.idUbigeo+"'>"+obj.distrito+"</option>")
+            					  }else{
+            							$("#id_act_distrito").append("<option value='"+obj.idUbigeo+"'>"+obj.distrito+"</option>")
+                   }
+                });
+
+                });
+            
+            
+   
             $('#id_div_modal_actualiza').modal("show");
         }
 
         function limpiarFormulario() {
             $('#id_reg_nombres').val('');
-            $('#id_reg_apellidos').val('');
+            $('#id_reg_dni').val('');
             $('#id_reg_correo').val('');
             $('#id_reg_direccion').val('');
             $('#id_estado').val('');
@@ -557,16 +578,16 @@
                         },
                     }
                 },
-                "apellidos": {
-                    selector: "#id_reg_apellidos",
+                "dni": {
+                    selector: "#id_reg_dni",
                     validators: {
                         notEmpty: {
-                            message: 'Los apellidos son obligatorio'
+                            message: 'El DNI es obligatorio'
                         },
                         stringLength: {
-                            min: 3,
-                            max: 40,
-                            message: 'Los apellidos debe ser de 3 a 40 caracteres'
+                            min: 8,
+                            max: 8,
+                            message: 'El DNI debe ser de 8 caracteres'
                         },
                     }
                 },
@@ -619,16 +640,16 @@
                         },
                     }
                 },
-                "apellidos": {
-                    selector: "#id_act_apellidos",
+                "dni": {
+                    selector: "#id_act_dni",
                     validators: {
                         notEmpty: {
-                            message: 'Los apellidos son obligatorio'
+                            message: 'El DNI es obligatorio'
                         },
                         stringLength: {
-                            min: 3,
-                            max: 40,
-                            message: 'Los apellidos debe ser de 3 a 40 caracteres'
+                            min: 8,
+                            max: 8,
+                            message: 'El DNI debe ser de 8 caracteres'
                         },
                     }
                 },
