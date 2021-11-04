@@ -171,31 +171,31 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_ID">ID</label>
 		                                        <div class="col-lg-8">
-		                                           <input class="form-control" id="id_ID" readonly="readonly" name="idModalidad" type="text" maxlength="8"/>
+		                                           <input class="form-control" id="id_ID" readonly="readonly" name="idModalidad" type="text" maxlength="11"/>
 		                                        </div>
 		                                     </div>
 		                                      <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_nombre">Nombre</label>
 		                                        <div class="col-lg-8">
-													<input class="form-control" id="id_act_nombre" name="nombre" placeholder="Ingrese el Nombre" type="text" maxlength="20"/>
+													<input class="form-control" id="id_act_nombre" name="nombre" placeholder="Ingrese el Nombre" type="text" maxlength="45"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_serie">Serie</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_act_serie" name="serie" placeholder="Ingrese el número de serie" type="text" maxlength="2"/>
+													<input class="form-control" id="id_act_serie" name="serie" placeholder="Ingrese el número de serie" type="text" maxlength="45"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_precio">Precio</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_act_precio" name="precio" placeholder="Ingrese el precio" type="text" maxlength="2"/>
+													<input class="form-control" id="id_act_precio" name="precio" placeholder="Ingrese el precio" type="text" maxlength="6"/>
 		                                        </div>
 		                                    </div>		   
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_stock">Stock</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_act_stock" name="stock" placeholder="Ingrese la stock" type="text" maxlength="2"/>
+													<input class="form-control" id="id_act_stock" name="stock" placeholder="Ingrese la stock" type="text" maxlength="6"/>
 		                                        </div>
 		                                    </div>  
 		                                   
@@ -336,30 +336,6 @@ function editar(id,nombre,serie,precio,stock,idMarca, idPais){
 	
 	
 
-	
-     $.getJSON("listaMarca", {}, function(data){
-    		$.each(data, function(i,obj){
-    			if(obj ==  idMarca){
-    			
-    			$("#id_act_marca").append("<option selected value='" + obj+ "'>"+obj+"</option>")
-    			 }else{
-    			$("#id_act_marca").append("<option value='" + obj+ "'>"+obj+"</option>")
-    			 }
-    		});
-    	});
-
-
-    	$.getJSON("listaPais", {}, function(data){
-    		$.each(data, function(i,obj){
-    			if(obj ==  idPais){
-    			
-    			$("#id_reg_pais").append("<option selected value='" + obj+ "'>"+obj+"</option>")
-    		 }else{
-    			$("#id_act_pais").append("<option value='" + obj+ "'>"+obj+"</option>")
-    		 }
-    		});
-    	});
-	
 	
 	
 	
@@ -505,9 +481,9 @@ $('#id_form_actualiza').bootstrapValidator({
                     message: 'El nombre es un campo obligatorio'
                 },
                 stringLength :{
-                	message:'El nombre es de 5 a 100 caracteres',
+                	message:'El nombre es de 5 a 45 caracteres',
                 	min : 5,
-                	max : 100
+                	max : 45
                 }
             }
         },
@@ -520,8 +496,8 @@ $('#id_form_actualiza').bootstrapValidator({
                 },
                 stringLength :{
                 	message:'La sede es de 2 a 10 caracteres',
-                	min : 2,
-                	max : 10
+                	min : 5,
+                	max : 45
                 }
             }
         },
