@@ -18,7 +18,7 @@
     <ul class="nav navbar-nav">
     	<li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	          Ingresos (Control 01)<b class="caret"></b>
+	          Registrar<b class="caret"></b>
 	        </a>
 	        <ul class="dropdown-menu">
 	        	<c:forEach var="x" items="${sessionScope.objMenus}">
@@ -35,7 +35,7 @@
      	
      	<li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	          CRUD (Control 02)<b class="caret"></b>
+	          Mantenimiento<b class="caret"></b>
 	        </a>
 	        <ul class="dropdown-menu">
 	        	<c:forEach var="x" items="${sessionScope.objMenus}">
@@ -52,7 +52,7 @@
      	
        	<li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	          Consultas (Control 03)<b class="caret"></b>
+	          Consultas<b class="caret"></b>
 	        </a>
 	        <ul class="dropdown-menu">
 	        	<c:forEach var="x" items="${sessionScope.objMenus}">
@@ -69,7 +69,7 @@
      	
      	<li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	          Transacciones (Control 03)<b class="caret"></b>
+	          Ventas<b class="caret"></b>
 	        </a>
 	        <ul class="dropdown-menu">
 	        	<c:forEach var="x" items="${sessionScope.objMenus}">
