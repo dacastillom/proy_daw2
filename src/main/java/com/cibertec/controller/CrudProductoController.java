@@ -45,13 +45,13 @@ public class CrudProductoController {
 		try {
 			Producto objsalida = productoServicio.insertaActualizaProducto(obj);
 			if (objsalida==null) {
-				salida.put("MENSAJE", Constantes.MENSAJE_REG_ERROR);
+				salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
 			}else {
-				salida.put("MENSAJE", Constantes.MENSAJE_REG_EXITOSO);
+				salida.put("mensaje", Constantes.MENSAJE_REG_EXITOSO);
 			}
 			
 		} catch (Exception e) {
-			salida.put("MENSAJE", Constantes.MENSAJE_REG_ERROR);
+			salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
 			e.printStackTrace();
 		} finally {
 			List<Producto> lst = productoServicio.listaProducto();
