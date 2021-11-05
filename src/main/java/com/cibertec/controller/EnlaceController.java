@@ -30,9 +30,6 @@ public class EnlaceController {
 	@RequestMapping("/verCrudCliente")
 	public String verCrudCliente() {	return "intranetCrudCliente";	}
 	
-	@RequestMapping("/verCrudMarca")
-	public String verCrudMarca() {	return "intranetCrudMarca";	}
-	
 	@RequestMapping("/verCrudProveedor")
 	public String verCrudProveedor() {	return "intranetCrudProveedor";	}
 	
@@ -40,29 +37,8 @@ public class EnlaceController {
 	public String verCrudProducto() {	return "intranetCrudProducto";	}
 
 	//consulta
-	@RequestMapping("/verConsultaCliente")
-	public String verConsultaCliente() {	return "intranetConsultaCliente";	}
-	
-	@RequestMapping("/verConsultaMarca")
-	public String verConsultaMarca() {	return "intranetConsultaMarca";	}
-	
-	@RequestMapping("/verConsultaProveedor")
-	public String verConsultaProveedor() {	return "intranetConsultaProveedor";	}
-	
-	@RequestMapping("/verConsultaProducto")
-	public String verConsultaProducto() {	return "intranetConsultaProducto";	}
 
-	
-	@RequestMapping("/verConsultaUsuario")
-	public String verConsultaUsuario() {	return "intranetConsultaUsuario";	}
-	
-	@RequestMapping("/verConsultaBoleta")
-	public String verConsultaBoleta() {	return "intranetConsultaBoleta";	}
-	
 	@RequestMapping("/verRegistroBoleta")
 	public String verRegistroBoleta() {	return "intranetRegistroBoleta";	}
-
-	@RequestMapping("/verRegistroComprobante")
-	public String verRegistroComprobante() {	return "intranetRegistroComprobante";	}
 
 }

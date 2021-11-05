@@ -71,10 +71,10 @@ public class CrudProductoController {
 			if (CollectionUtils.isEmpty(lista)) {
 				Producto objSalida = productoServicio.insertaActualizaProducto(obj);
 				if(objSalida == null) {
-				 salida.put("MENSAJE", "Registro act  erroneo");					
+				 salida.put("mensaje", "Proceso erroneo");					
 				
 			}else {
-				salida.put("MENSAJE", "Registro act exitoso");
+				salida.put("mensaje", "Proceso exitoso");
 			}
 			
 		} else {
@@ -83,7 +83,7 @@ public class CrudProductoController {
 		}
 		
 		catch (Exception e) {
-			salida.put("MENSAJE", "Registro act exitoso");
+			salida.put("mensaje", "Registro act exitoso");
 			e.printStackTrace();
 		} finally {
 			List<Producto> lst = productoServicio.listaProducto();
@@ -97,18 +97,19 @@ public class CrudProductoController {
 	@ResponseBody
 	public Map<String, Object> elimina(int id){
 		Map<String, Object> salida = new HashMap<>();
-				
 		try {
 			Optional<Producto> optProducto = productoServicio.obtienePorId(id);
+			System.out.println("optProducto" + optProducto);
 			if(optProducto.isPresent()) {
+				System.out.println("true");
 				productoServicio.eliminaProducto(id);
-				salida.put("MENSAJE", "Registro eli exitoso");
+				salida.put("mensaje", "Producto eliminado exitosamente");
 			}else {
-				salida.put("MENSAJE", "Registro eli  erroneo");
+				salida.put("mensaje", "Producto a eliminar incorrecto");
 			}
 			
 		} catch (Exception e) {
-			salida.put("MENSAJE", "Registro reg  erroneo");
+			salida.put("mensaje", "Error al eliminar un producto");
 			e.printStackTrace();
 		} finally {
 			List<Producto> lista = productoServicio.listaProducto();

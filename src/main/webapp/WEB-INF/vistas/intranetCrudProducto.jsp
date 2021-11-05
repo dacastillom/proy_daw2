@@ -305,7 +305,7 @@ function eliminar(id){
 }
 
 
-function eliminar(id){	
+function eliminar(id){
 	mostrarMensajeConfirmacion(MSG_ELIMINAR, accionEliminar,null,id);
 }
 
@@ -333,14 +333,6 @@ function editar(id,nombre,serie,precio,stock,idMarca, idPais){
 	$('#id_act_stock').val(stock);
 	$('#id_act_marca').val(idMarca);
 	$('#id_act_pais').val(idPais);
-	
-	
-
-	
-	
-	
-	
-	
 	$('#id_div_modal_actualiza').modal("show");
 }
 
@@ -398,7 +390,6 @@ $("#id_btn_actualiza").click(function(){
         });
     }
 });
-<!-- Agregar aqu� -->
 </script>   
 
 
