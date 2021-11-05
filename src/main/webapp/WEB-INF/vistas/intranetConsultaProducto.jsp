@@ -21,19 +21,19 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>Intranet</title>
+<title>La Calera</title>
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
 <div class="container" style="margin-top: 5%"><h4>Consulta Producto</h4></div>
 
 <div class="container" style="margin-top: 1%">
-<!-- Agregar aquí -->
+<!-- Agregar aquï¿½ -->
 	
 </div>
 
 <script type="text/javascript">
-<!-- Agregar aquí -->
+<!-- Agregar aquï¿½ -->
 
 
 </script>   		

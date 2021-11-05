@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Dawi20211Grupo01MiercolesApplication<dawi_2021_1_grupo_01_miercoles>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cibertec.Dawi20211Grupo01MiercolesApplication",
+            "projectName": "dawi_2021_1_grupo_01_miercoles",
+            "args": ""
+        }
+    ]
+}

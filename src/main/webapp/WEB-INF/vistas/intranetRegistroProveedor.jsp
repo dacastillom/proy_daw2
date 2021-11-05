@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>Intranet</title>
+<title>La Calera</title>
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
@@ -32,8 +32,8 @@
 		<div class="col-md-12" style="margin-top: 2%">
 			<div class="row">
 				<div class="from-group col-md-9">
-					<label class="control-label" for="id_razonsocial">Razón Social</label>
-					<input class="form-control" type="text" id="id_razonsocial" name="razonsocial" placeholder="Ingrese la Razón Social">
+					<label class="control-label" for="id_razonsocial">Razï¿½n Social</label>
+					<input class="form-control" type="text" id="id_razonsocial" name="razonsocial" placeholder="Ingrese la Razï¿½n Social">
 				</div>
 				<div class="from-group col-md-3">
 					<label class="control-label" for="id_ruc">Ruc</label>
@@ -42,12 +42,12 @@
 			</div>
 			<div class="row">
 				<div class="from-group col-md-6">
-					<label class="control-label" for="id_direccion">Dirección</label>
-					<input class="form-control" type="text" id="id_direccion" name="direccion" placeholder="Ingrese su Dirección">
+					<label class="control-label" for="id_direccion">Direcciï¿½n</label>
+					<input class="form-control" type="text" id="id_direccion" name="direccion" placeholder="Ingrese su Direcciï¿½n">
 				</div>
 				<div class="from-group col-md-3">
-					<label class="control-label" for="id_telefono">Teléfono</label>
-					<input class="form-control" type="text" id="id_telefono" name="telefono" placeholder="Ingrese su Teléfono">
+					<label class="control-label" for="id_telefono">Telï¿½fono</label>
+					<input class="form-control" type="text" id="id_telefono" name="telefono" placeholder="Ingrese su Telï¿½fono">
 				</div>
 				<div class="from-group col-md-3">
 					<label class="control-label" for="id_celular">Celular</label>
@@ -172,7 +172,7 @@ $('#id_form').bootstrapValidator({
     		selector : '#id_razonsocial',
             validators: {
                 notEmpty: {
-                    message: 'La Razón social es un campo obligatorio'
+                    message: 'La Razï¿½n social es un campo obligatorio'
                 },
                 stringLength :{
                 	message:'El nombre es de 5 a 100 caracteres',
@@ -198,10 +198,10 @@ $('#id_form').bootstrapValidator({
     		selector : '#id_direccion',
             validators: {
                 notEmpty: {
-                    message: 'La Dirección es un campo obligatorio'
+                    message: 'La Direcciï¿½n es un campo obligatorio'
                 },
                 stringLength :{
-                	message:'La Dirección es de 5 a 100 caracteres',
+                	message:'La Direcciï¿½n es de 5 a 100 caracteres',
                 	min : 5,
                 	max : 100
                 }
@@ -211,10 +211,10 @@ $('#id_form').bootstrapValidator({
     		selector : '#id_telefono',
             validators: {
                 notEmpty: {
-                    message: 'El Teléfono es un campo obligatorio'
+                    message: 'El Telï¿½fono es un campo obligatorio'
                 },
                 stringLength :{
-                	message:'El Teléfono es de 7 a 100 caracteres',
+                	message:'El Telï¿½fono es de 7 a 100 caracteres',
                 	min : 7,
                 	max : 100
                 }

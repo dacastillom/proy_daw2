@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>Intranet</title>
+<title>La Calera</title>
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
@@ -65,7 +65,7 @@
 						</select>
 				</div>
 					<div class="form-group col-md-3">
-						<strong><label class="control-Label" for="id_pais" style="text-align: center;">País</label></strong>
+						<strong><label class="control-Label" for="id_pais" style="text-align: center;">Paï¿½s</label></strong>
 						<select class="form-control" id="id_pais" name="pais.idPais">
 							<option value=" ">[Seleccione] </option>
 						</select>

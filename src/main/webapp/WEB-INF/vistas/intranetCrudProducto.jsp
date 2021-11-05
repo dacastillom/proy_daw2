@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="esS" >
 <head>
-<!-- Autor: Crystal -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,11 +21,12 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>Intranet</title>
+
+<title>La Calera</title>
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
-<div class="container" style="margin-top: 5%"><h4>Crud Producto</h4></div>
+<div class="container" style="margin-top: 5%"><h4>Producto</h4></div>
 
 <div class="container" style="margin-top: 1%">
 
@@ -56,7 +56,7 @@
 												<th style="width: 8%">Precio</th>
 												<th style="width: 8%">Stock</th>
 												<th style="width: 8%">Marca</th>
-												<th style="width: 8%">País</th>
+												<th style="width: 8%">Paï¿½s</th>
 												<th style="width: 10%">Actualiza</th>
 												<th style="width: 10%">Elimina</th>
 											</tr>
@@ -98,7 +98,7 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_reg_serie">Serie</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_reg_serie" name="serie" placeholder="Ingrese el número de serie" type="text" maxlength="2"/>
+													<input class="form-control" id="id_reg_serie" name="serie" placeholder="Ingrese el nï¿½mero de serie" type="text" maxlength="2"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
@@ -183,7 +183,7 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_serie">Serie</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_act_serie" name="serie" placeholder="Ingrese el número de serie" type="text" maxlength="45"/>
+													<input class="form-control" id="id_act_serie" name="serie" placeholder="Ingrese el nï¿½mero de serie" type="text" maxlength="45"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
@@ -235,7 +235,7 @@
 		</div>
 			
 		</div>
-<!-- Agregar aquí -->
+<!-- Agregar aquï¿½ -->
 	
 </div>
 
@@ -398,7 +398,7 @@ $("#id_btn_actualiza").click(function(){
         });
     }
 });
-<!-- Agregar aquí -->
+<!-- Agregar aquï¿½ -->
 </script>   
 
 

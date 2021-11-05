@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>Intranet</title>
+<title>La Calera</title>
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
@@ -29,7 +29,7 @@
 
 <div class="container" style="margin-top: 1%">
 
-<!-- Agregar aquí -->
+<!-- Agregar aquï¿½ -->
 
 	<form id="id_form" accept-charset="UTF-8" action="pedido" class="form-horizontal" method="post">
 			
@@ -90,7 +90,7 @@
 							<div class="form-group col-md-4">
 								<label class="col-lg-2 control-label">Lugar Entrega</label>
 								<div class="col-lg-8"> 
-									<input type="text" name="fechaEntrega" id="id_lugar_entrega" placeholder="Ingrese la dirección" required class="form-control" />
+									<input type="text" name="fechaEntrega" id="id_lugar_entrega" placeholder="Ingrese la direcciï¿½n" required class="form-control" />
 								</div>
 							</div>
 					</div>
@@ -98,7 +98,7 @@
 			</div>	
 				
 				<div class="panel panel-default">
-					<div class="panel-heading">Selección de Producto</div>
+					<div class="panel-heading">Selecciï¿½n de Producto</div>
 						<div class="panel-body">
 							<div class="form-group  col-md-4" >
 								<div class="col-lg-2">
@@ -150,7 +150,7 @@
 									<table id="id_table_boleta" class="table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th style="width: 5%">Código</th>
+												<th style="width: 5%">Cï¿½digo</th>
 												<th style="width: 30%">Nombre</th>
 												<th style="width: 20%">Precio</th>
 												<th style="width: 10%">Cantidad</th>
@@ -285,7 +285,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	//Se añade los clientes a la tabla
+	//Se aï¿½ade los clientes a la tabla
 	$.getJSON("listaSeleccion",{}, function (data){
 		$.each(data, function(index, item){
 			$('#id_table_boleta_body').append("<tr><td>" +item.idProducto + "</td><td>" +item.nombre + "</td><td>" +item.precio + "</td><td>" +item.cantidad + "</td><td>" +item.totalParcial + "</td><td><button type='button' onclick='f_elimina_seleccion(" + item.idProducto +");' class='btn btn-default' aria-label='Left Align' ><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></td></tr>");                     
@@ -294,13 +294,13 @@ $(document).ready(function() {
 	
 });
 
-//Al pulsar el botón cliente
+//Al pulsar el botï¿½n cliente
 $("#id_btnCliente").click(function (){
 	muestraCliente();
 	$("#idBuscaCliente").modal("show");
 });
 
-//Al pulsar el botón producto
+//Al pulsar el botï¿½n producto
 $("#id_btnProducto").click(function (){
 	muestraProducto();
 	$("#idBuscaProducto").modal("show");
@@ -322,7 +322,7 @@ $(document).on("keypress", "form", function(event) {
 });
 
 
-//Al pulsar el botón agregar
+//Al pulsar el botï¿½n agregar
 $("#id_btnAgregar").click(function (){
 	var var_pro = $("#id_producto_id").val();
 	var var_can = $("#id_producto_cantidad").val();
@@ -343,7 +343,7 @@ $("#id_btnAgregar").click(function (){
 		$("#idMensajeTexto").text("Agrege una cantidad");
 		$("#idMensaje").modal("show");
 	}else if ( $.isNumeric( var_can ) == false ){
-		$("#idMensajeTexto").text("La cantidad debe ser númerico");
+		$("#idMensajeTexto").text("La cantidad debe ser nï¿½merico");
 		$("#idMensaje").modal("show");
 	}else if (parseInt(var_can) <= 0 ){
 		$("#idMensajeTexto").text("La cantidad debe ser postivo");
@@ -377,11 +377,11 @@ $("#id_btnAgregar").click(function (){
 					});
 					
 				}else
-					swal("Error al agregar la selección del producto","","error");
+					swal("Error al agregar la selecciï¿½n del producto","","error");
 					return false;
 				},
 			error: function (jqXhr) { 
-				swal("Error en la conexión","","error");
+				swal("Error en la conexiï¿½n","","error");
 			}
 	   });	
 		   
@@ -396,7 +396,7 @@ $("#id_btnAgregar").click(function (){
 });
 
 
-//Al pulsar el botón agregar
+//Al pulsar el botï¿½n agregar
 $("#id_btnRegistrar").click(function (){
 	var var_cli = $("#id_cliente_id").val();
 	var var_ape = $("#id_cliente_dni").val();
@@ -429,7 +429,7 @@ $("#id_btnRegistrar").click(function (){
 			url:  'registraPedido',
 			type: 'POST',
 			dataType:'json',
-			//Vienen de los parámetros del controlador, revisar los nombres
+			//Vienen de los parï¿½metros del controlador, revisar los nombres
 			data: 'idCliente=' +var_cli + '&nomCliente='+var_nom + '&apeCliente='+var_ape + '&fecEntrega='+var_fec_ent + '&lugEntrega='+var_lug_ent+ '&estado='+var_estado,
 			success:function(data){
 				if(data.texto != "-1"){
@@ -449,7 +449,7 @@ $("#id_btnRegistrar").click(function (){
 					return false;
 				},
 			error: function (jqXhr) { 
-				swal("Error en la conexión","","error");
+				swal("Error en la conexiï¿½n","","error");
 			}
 	   });	
 		   
@@ -463,7 +463,7 @@ function muestraCliente(){
 	//limpiar la tabla
 	$("#id_table_cliente tbody").empty();
 	
-	//Se añade los clientes a la tabla
+	//Se aï¿½ade los clientes a la tabla
 	$.getJSON("cargaCliente",{"filtro":var_cliente}, function (data){
 		$.each(data, function(index, item){
 			$('#id_table_cliente').append("<tr><td>" +item.idCliente + "</td><td>" +item.nombres + "</td><td>" +item.dni + "</td><td><button type='button' class='btn btn-default' aria-label='Left Align' onclick=\"f_seleccione_cliente('"+ item.idCliente+"','"+ item.nombres+"','"+ item.dni+"');\" ><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button></td></tr>");
@@ -477,7 +477,7 @@ function muestraProducto(){
 	//limpiar la tabla
 	$("#id_table_producto tbody").empty();
 	
-	//Se añade los clientes a la tabla
+	//Se aï¿½ade los clientes a la tabla
 	$.getJSON("cargaProducto",{"filtro":var_producto}, function (data){
 		$.each(data, function(index, item){
 			$('#id_table_producto').append("<tr><td>" +item.idProducto + "</td><td>" +item.nombre + "</td><td>" +item.precio + "</td><td>" +item.stock + "</td><td><button type='button' class='btn btn-default' aria-label='Left Align' onclick=\"f_seleccione_producto('"+ item.idProducto+"','"+ item.nombre+"','"+ item.precio+"','"+ item.stock+"');\" ><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button></td></tr>");
@@ -502,12 +502,12 @@ function f_seleccione_producto(id,nombre,precio,stock){
 	$("#idBuscaProducto").modal("hide");
 }
 
-//Al pulsar el botón eliminar
+//Al pulsar el botï¿½n eliminar
 function f_elimina_seleccion(id){	
 	//limpiar la tabla
 	$("#id_table_boleta_body").empty();
 		
-	//Se añade los clientes a la tabla
+	//Se aï¿½ade los clientes a la tabla
 	$.getJSON("eliminaSeleccion",{"idProducto":id}, function (data){
 		$.each(data, function(index, item){
 			$('#id_table_boleta_body').append("<tr><td>" +item.idProducto + "</td><td>" +item.nombre + "</td><td>" +item.precio + "</td><td>" +item.cantidad + "</td><td>" +item.totalParcial + "</td><td><button type='button' onclick='f_elimina_seleccion(" + item.idProducto +");' class='btn btn-default' aria-label='Left Align' ><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></td><tr>");
@@ -526,7 +526,7 @@ function f_elimina_seleccion(id){
 function validarSoloNumerosEnteros(e) { // 1
 	tecla = (document.all) ? e.keyCode : e.which; // 2
 	if (tecla == 8)	return true; // 3
-	patron = /[0-9]/;// Solo acepta números
+	patron = /[0-9]/;// Solo acepta nï¿½meros
 	te = String.fromCharCode(tecla); // 5
 	return patron.test(te); // 6
 }

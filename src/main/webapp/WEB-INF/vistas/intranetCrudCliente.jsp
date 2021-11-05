@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrapValidator.css" />
 
-    <title>Intranet</title>
+    <title>La Calera</title>
 </head>
 
 <body>
@@ -108,8 +108,7 @@
                                                     style="text-align: left;">DNI</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_reg_dni" name="dni"
-                                                        placeholder="Ingrese el DNI " type="text"
-                                                        maxlength="40" />
+                                                        placeholder="Ingrese el DNI " type="text" maxlength="40" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -120,7 +119,7 @@
                                                         placeholder="Ingrese el correo" type="text" />
                                                 </div>
                                                 <label class="col-lg-2 control-label" for="id_reg_direccion"
-                                                    style="text-align: left;">Direcciónn</label>
+                                                    style="text-align: left;">Direcciï¿½nn</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_reg_direccion" name="direccion"
                                                         placeholder="Ingrese su direcciÃ³n" type="text" maxlength="40" />
@@ -222,8 +221,7 @@
                                                     style="text-align: left;">DNI</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_act_dni" name="dni"
-                                                        placeholder="Ingrese el DNI" type="text"
-                                                        maxlength="40" />
+                                                        placeholder="Ingrese el DNI" type="text" maxlength="40" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -317,6 +315,15 @@
     </div>
 
     </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script> -->
     <script type="text/javascript">
         $.getJSON("listaDepartamentos", {}, function (data) {
             $.each(data, function (i, item) {
@@ -458,21 +465,21 @@
             });
         }
 
-        function eliminar(id){	
-        	$('input[id=id_elimina]').val(id);
-        	$('#idFormElimina').submit();
+        function eliminar(id) {
+            $('input[id=id_elimina]').val(id);
+            $('#idFormElimina').submit();
         }
-        
+
         function eliminar(id) {
             mostrarMensajeConfirmacion(MSG_ELIMINAR, accionEliminar, null, id);
         }
 
         function accionEliminar(id, estado) {
-        	$('#id_elimina').val(id);
+            $('#id_elimina').val(id);
             $.ajax({
                 type: "POST",
                 url: "eliminaCrudCliente",
-                data: {"id":id},
+                data: { "id": id },
                 success: function (data) {
                     agregarGrilla(data.lista);
                     mostrarMensaje(data.mensaje);
@@ -493,38 +500,38 @@
             $('#id_act_estado').val(estado);
             $("#id_act_provincia").empty();
             $("#id_act_distrito").empty();
-            
+
             $("#id_act_provincia").append("<option value=' ' >[Seleccione Provincia]</option>");
             $("#id_act_distrito").append("<option value=' ' >[Seleccione Distrito]</option>");
 
-            
+
             $('#id_act_departamento').val(departamento);
-            
-            
-            
-            $.getJSON("listaProvincias",{"departamento":departamento},function(data){
-                $.each(data,function(i, obj){
-                    if(obj ==  provincia){
-                          $("#id_act_provincia").append("<option selected value='" + obj+ "'>"+obj+"</option>");
-                    }else{
-                         $("#id_act_provincia").append("<option value='" + obj+ "'>"+obj+"</option>");
+
+
+
+            $.getJSON("listaProvincias", { "departamento": departamento }, function (data) {
+                $.each(data, function (i, obj) {
+                    if (obj == provincia) {
+                        $("#id_act_provincia").append("<option selected value='" + obj + "'>" + obj + "</option>");
+                    } else {
+                        $("#id_act_provincia").append("<option value='" + obj + "'>" + obj + "</option>");
                     }
                 });
+            });
+
+            $.getJSON("listaDistritos", { "provincia": provincia, "departamento": departamento }, function (data) {
+                $.each(data, function (index, obj) {
+                    if (obj.distrito == distrito) {
+                        $("#id_act_distrito").append("<option selected value='" + obj.idUbigeo + "'>" + obj.distrito + "</option>")
+                    } else {
+                        $("#id_act_distrito").append("<option value='" + obj.idUbigeo + "'>" + obj.distrito + "</option>")
+                    }
                 });
 
-            $.getJSON("listaDistritos",{"provincia":provincia,"departamento":departamento},function(data){
-                $.each(data,function(index,obj){
-                   if(obj.distrito ==  distrito){
-            							$("#id_act_distrito").append("<option selected value='"+obj.idUbigeo+"'>"+obj.distrito+"</option>")
-            					  }else{
-            							$("#id_act_distrito").append("<option value='"+obj.idUbigeo+"'>"+obj.distrito+"</option>")
-                   }
-                });
+            });
 
-                });
-            
-            
-   
+
+
             $('#id_div_modal_actualiza').modal("show");
         }
 

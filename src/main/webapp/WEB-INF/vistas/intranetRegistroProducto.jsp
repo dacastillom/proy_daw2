@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrapValidator.css" />
 
-<title>Intranet</title>
+<title>La Calera</title>
 </head>
 <body>
 	<jsp:include page="intranetCabecera.jsp" />
