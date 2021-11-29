@@ -60,7 +60,7 @@
                                     <th style="width: 12%">DNI</th>
                                     <th style="width: 15%">Correo</th>
                                     <th style="width: 12%">Fec de registro.</th>
-                                    <th style="width: 8%">DirecciÃ³n </th>
+                                    <th style="width: 8%">Dirección</th>
                                     <th style="width: 8%">Estado </th>
                                     <th style="width: 12%">ID de ubigeo </th>
                                     <th style="width: 8%"> Actualiza </th>
@@ -119,7 +119,7 @@
                                                         placeholder="Ingrese el correo" type="text" />
                                                 </div>
                                                 <label class="col-lg-2 control-label" for="id_reg_direccion"
-                                                    style="text-align: left;">Direcciï¿½nn</label>
+                                                    style="text-align: left;">Dirección</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_reg_direccion" name="direccion"
                                                         placeholder="Ingrese su direcciÃ³n" type="text" maxlength="40" />
