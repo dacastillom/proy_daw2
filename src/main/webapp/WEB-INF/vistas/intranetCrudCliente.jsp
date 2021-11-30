@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrapValidator.css" />
 
-    <title>La Calera</title>
+    <title>PROYECTO - La Calera</title>
 </head>
 
 <body>
@@ -122,7 +122,7 @@
                                                     style="text-align: left;">Direcci髇</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_reg_direccion" name="direccion"
-                                                        placeholder="Ingrese su direcci贸n" type="text" maxlength="40" />
+                                                        placeholder="Ingrese su direcci髇" type="text" maxlength="40" />
                                                 </div>
                                             </div>
 
@@ -221,7 +221,7 @@
                                                     style="text-align: left;">DNI</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_act_dni" name="dni"
-                                                        placeholder="Ingrese el DNI" type="text" maxlength="40" />
+                                                        placeholder="Ingrese el DNI" type="text" maxlength="40" readonly="readonly"/>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -232,7 +232,7 @@
                                                         placeholder="Ingrese el correo" type="text" />
                                                 </div>
                                                 <label class="col-lg-2 control-label" for="id_act_direccion"
-                                                    style="text-align: left;">Direcci贸n</label>
+                                                    style="text-align: left;">Direcci髇</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_act_direccion" name="direccion"
                                                         placeholder="Ingrese su direcci贸n" type="text" maxlength="40" />
@@ -443,7 +443,7 @@
                     { data: "dni" },
                     { data: "correo" },
                     {
-                        data: (row, type, val, meta) => new Date(row.fechaRegistro).toLocaleString('es-PE'), className: 'text-center'
+                        data: "fechaRegistro"
                     },
                     { data: "direccion" },
                     {
@@ -680,7 +680,7 @@
                         stringLength: {
                             min: 3,
                             max: 40,
-                            message: 'La direcci贸n debe ser de 3 a 40 caracteres'
+                            message: 'La direcci髇 debe ser de 3 a 40 caracteres'
                         },
                     }
                 },

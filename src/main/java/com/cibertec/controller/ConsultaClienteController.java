@@ -10,13 +10,6 @@ import com.cibertec.servicio.ClienteServicio;
 import com.cibertec.entidad.Cliente;
 
 
-/*
- * @author Luciano Rocca Talavera - T5WM
- * 
- * 
- * */
-
-
 
 @Controller
 public class ConsultaClienteController {

@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>La Calera</title>
+<title>PROYECTO - La Calera</title>
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
@@ -39,7 +39,7 @@
 		 
 					<div class="row" style="height: 70px">
 						<div class="col-md-3" >
-								<input class="form-control" id="id_txt_filtro"  name="filtro" placeholder="Ingrese la Razï¿½n Social" type="text" maxlength="30"/>
+								<input class="form-control" id="id_txt_filtro"  name="filtro" placeholder="Ingrese la Razón Social" type="text" maxlength="30"/>
 						</div>
 						<div class="col-md-2" >
 							<button type="button" class="btn btn-primary" id="id_btn_filtrar" style="width: 150px">FILTRA</button>
@@ -60,10 +60,10 @@
 										<thead>
 											<tr>
 												<th style="text-align:center; width: 3%">ID</th>
-												<th style="text-align:center; width: 18%">Razï¿½n Social</th>
+												<th style="text-align:center; width: 18%">Razón Social</th>
 												<th style="text-align:center; width: 12%">RUC</th>
-												<th style="text-align:center; width: 15%">Direcciï¿½n</th>
-												<th style="text-align:center; width: 10%">Telï¿½fono</th>
+												<th style="text-align:center; width: 15%">Dirección</th>
+												<th style="text-align:center; width: 10%">Teléfono</th>
 												<th style="text-align:center; width: 10%">Celular</th>
 												<th style="text-align:center; width: 10%">Contacto</th>
 												<th style="text-align:center; width: 12%">Cod. Ubigeo</th>
@@ -108,9 +108,9 @@
 		                                <div class="panel-body">
 		                                
 		                                	<div class="form-group">
-			                                       <label class="col-lg-3 control-label" for="id_reg_razonsocial" style="text-align: right;">RAZï¿½N SOCIAL</label> <!-- El registro no lleva ID -->
+			                                       <label class="col-lg-3 control-label" for="id_reg_razonsocial" style="text-align: right;">RAZÓN SOCIAL</label> <!-- El registro no lleva ID -->
 			                                        <div class="col-lg-6">
-														<input class="form-control" id="id_reg_razonsocial" name="razonsocial" placeholder="Ingrese la Razï¿½n Social" type="text" maxlength="25"/>
+														<input class="form-control" id="id_reg_razonsocial" name="razonsocial" placeholder="Ingrese la Razón Social" type="text" maxlength="25"/>
 			                                        </div>
 			                                   </div>     
 			                                   
@@ -125,16 +125,16 @@
 			                               
 			                                
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_direccion" style="text-align: right;">DIRECCIï¿½N</label>
+		                                        <label class="col-lg-3 control-label" for="id_reg_direccion" style="text-align: right;">DIRECCIÓN</label>
 		                                        <div class="col-lg-6">
 													<input class="form-control" id="id_reg_direccion" name="direccion" placeholder="Ingrese el correo" type="text" maxlength="25" />
 		                                      	</div>   
 		                                   </div>
 		                                  
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_telefono" style="text-align: right;">TELï¿½FONO</label>
+		                                        <label class="col-lg-3 control-label" for="id_reg_telefono" style="text-align: right;">TELÉFONO</label>
 		                                        <div class="col-lg-4">
-													<input class="form-control" id="id_reg_telefono" name="telefono" placeholder="Ingrese el telï¿½fono" type="text" maxlength="9" />
+													<input class="form-control" id="id_reg_telefono" name="telefono" placeholder="Ingrese el teléfono" type="text" maxlength="9" />
 		                                     	 </div>
 		                                   </div>   
 		                                      
@@ -233,9 +233,9 @@
 			                                   </div>     
 		                                
 		                                   <div class="form-group">
-			                                       <label class="col-lg-3 control-label" for="id_act_razonsocial" style="text-align: right;">RAZï¿½N SOCIAL</label>
+			                                       <label class="col-lg-3 control-label" for="id_act_razonsocial" style="text-align: right;">RAZÓN SOCIAL</label>
 			                                        <div class="col-lg-6">
-														<input class="form-control" id="id_act_razonsocial" name="razonsocial" placeholder="Ingrese la Razï¿½n Social" type="text" maxlength="25"/>
+														<input class="form-control" id="id_act_razonsocial" name="razonsocial" placeholder="Ingrese la Razï¿½n Social" type="text" maxlength="25" readonly="readonly"/>
 			                                        </div>
 			                                   </div>     
                                    
@@ -249,14 +249,14 @@
 			                                
 			                                
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_act_direccion" style="text-align: right;">DIRECCIï¿½N</label>
+		                                        <label class="col-lg-3 control-label" for="id_act_direccion" style="text-align: right;">DIRECCIÓN</label>
 		                                        <div class="col-lg-6">
 													<input class="form-control" id="id_act_direccion" name="direccion" placeholder="Ingrese el correo" type="text" maxlength="25" />
 		                                      	</div>   
 		                                   </div>
 		                                  
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_act_telefono" style="text-align: right;">TELï¿½FONO</label>
+		                                        <label class="col-lg-3 control-label" for="id_act_telefono" style="text-align: right;">TELEFONO</label>
 		                                        <div class="col-lg-4">
 													<input class="form-control" id="id_act_telefono" name="telefono" placeholder="Ingrese el telï¿½fono" type="text" maxlength="9" />
 		                                     	 </div>
@@ -645,12 +645,12 @@ $('#id_form_registra').bootstrapValidator({
             selector: "#id_reg_razonsocial",
             validators:{
                 notEmpty: {
-                     message: 'La Razï¿½n Social es obligatoria'
+                     message: 'La Razón Social es obligatoria'
                 },
                 stringLength: {
                     min: 3,
                     max: 40,
-                    message: 'El Razï¿½n Social es de 3 a 40 caracteres'
+                    message: 'El Razón Social es de 3 a 40 caracteres'
                 },
             }
         },
@@ -662,7 +662,7 @@ $('#id_form_registra').bootstrapValidator({
                 },
                 regexp: {
                     regexp: /^[0-9]{11}$/,
-                    message: 'El RUC tiene 11 dï¿½gitos'
+                    message: 'El RUC tiene 11 dígitos'
                 },
             }
         },
@@ -670,7 +670,7 @@ $('#id_form_registra').bootstrapValidator({
             selector: "#id_reg_direccion",
             validators:{
                 notEmpty: {
-                     message: 'La direcciï¿½n es obligatoria'
+                     message: 'La dirección es obligatoria'
                 },
                 stringLength: {
                     min: 3,
@@ -683,11 +683,11 @@ $('#id_form_registra').bootstrapValidator({
         	 selector: "#id_reg_telefono",
              validators:{
             	 notEmpty: {
-                     message: 'El telï¿½fono es obligatorio'
+                     message: 'El teléfono es obligatorio'
                 },
                 regexp: {
                     regexp: /^[0-9]{9}$/,
-                    message: 'El telï¿½fono tiene 9 dï¿½gitos'
+                    message: 'El teléfono tiene 9 dígitos'
                 },
              }
         },
@@ -700,7 +700,7 @@ $('#id_form_registra').bootstrapValidator({
                },
                regexp: {
                    regexp: /^[0-9]{9}$/,
-                   message: 'El celular tiene 9 dï¿½gitos'
+                   message: 'El celular tiene 9 dígitos'
                },
             }
        },
@@ -732,12 +732,12 @@ $('#id_form_actualiza').bootstrapValidator({
             selector: "#id_act_razonsocial",
             validators:{
                 notEmpty: {
-                     message: 'La Razï¿½n Social es obligatoria'
+                     message: 'La Razón Social es obligatoria'
                 },
                 stringLength: {
                     min: 3,
                     max: 40,
-                    message: 'El Razï¿½n Social es de 3 a 40 caracteres'
+                    message: 'El Razón Social es de 3 a 40 caracteres'
                 },
             }
         },
@@ -749,7 +749,7 @@ $('#id_form_actualiza').bootstrapValidator({
                 },
                 regexp: {
                     regexp: /^[0-9]{11}$/,
-                    message: 'El RUC tiene 11 dï¿½gitos'
+                    message: 'El RUC tiene 11 dígitos'
                 },
             }
         },
@@ -757,12 +757,12 @@ $('#id_form_actualiza').bootstrapValidator({
             selector: "#id_act_direccion",
             validators:{
                 notEmpty: {
-                     message: 'La direcciï¿½n es obligatoria'
+                     message: 'La dirección es obligatoria'
                 },
                 stringLength: {
                     min: 3,
                     max: 40,
-                    message: 'La direcciï¿½n debe ser de 3 a 40 caracteres'
+                    message: 'La dirección debe ser de 3 a 40 caracteres'
                 }
             }
         },
@@ -770,11 +770,11 @@ $('#id_form_actualiza').bootstrapValidator({
         	 selector: "#id_act_telefono",
              validators:{
             	 notEmpty: {
-                     message: 'El telï¿½fono es obligatorio'
+                     message: 'El teléfono es obligatorio'
                 },
                 regexp: {
                     regexp: /^[0-9]{9}$/,
-                    message: 'El telï¿½fono tiene 9 dï¿½gitos'
+                    message: 'El teléfono tiene 9 dígitos'
                 },
              }
         },
@@ -787,7 +787,7 @@ $('#id_form_actualiza').bootstrapValidator({
                },
                regexp: {
                    regexp: /^[0-9]{9}$/,
-                   message: 'El celular tiene 9 dï¿½gitos'
+                   message: 'El celular tiene 9 dígitos'
                },
             }
        },

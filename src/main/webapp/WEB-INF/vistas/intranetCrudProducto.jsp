@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="css/bootstrapValidator.css" />
 
 
-	<title>La Calera</title>
+	<title>Proyecto La Calera</title>
 </head>
 
 <body>
@@ -59,11 +59,11 @@
 								<tr>
 									<th style="width: 5%">ID</th>
 									<th style="width: 35%">Nombre</th>
-									<th style="width: 8%">Serie</th>
+									<th style="width: 8%">Presentación</th>
 									<th style="width: 8%">Precio</th>
 									<th style="width: 8%">Stock</th>
-									<th style="width: 8%">Marca</th>
-									<th style="width: 8%">Paï¿½s</th>
+									<th style="width: 8%">Familia</th>
+									<th style="width: 8%">Planta</th>
 									<th style="width: 10%">Actualiza</th>
 									<th style="width: 10%">Elimina</th>
 								</tr>
@@ -105,14 +105,28 @@
 														placeholder="Ingrese el Nombre" type="text" maxlength="20" />
 												</div>
 											</div>
+											
+											
+											
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_reg_serie">Serie</label>
+											
+												<label class="col-lg-3 control-label" for="id_reg_presentacion">Presentación</label>
 												<div class="col-lg-3">
-													<input class="form-control" id="id_reg_serie" name="serie"
-														placeholder="Ingrese el nï¿½mero de serie" type="text"
-														maxlength="2" />
-												</div>
-											</div>
+													<select id="id_reg_presentacion" name="presentacion" class='form-control'>
+														<option value=" ">[Seleccione]</option>
+																<option >Huevo de Gallina</option>
+																<option >Huevo de Codorniz</option>										
+																<option >Gallina Viva</option>
+																<option >Gallina Beneficiada</option>
+																<option >Fruta</option>
+																
+														
+													</select>
+												</div>		
+												
+										</div>									
+												
+											
 											<div class="form-group">
 												<label class="col-lg-3 control-label" for="id_reg_precio">Precio</label>
 												<div class="col-lg-3">
@@ -129,18 +143,18 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_reg_marca">Marca</label>
+												<label class="col-lg-3 control-label" for="id_reg_familia">Familia</label>
 												<div class="col-lg-3">
-													<select id="id_reg_marca" name="marca" class='form-control'>
+													<select id="id_reg_familia" name="familia" class='form-control'>
 														<option value=" ">[Seleccione]</option>
 													</select>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_reg_pais">Pais</label>
+												<label class="col-lg-3 control-label" for="id_reg_planta">Planta</label>
 												<div class="col-lg-3">
-													<select id="id_reg_pais" name="pais" class='form-control'>
+													<select id="id_reg_planta" name="planta" class='form-control'>
 														<option value=" ">[Seleccione]</option>
 													</select>
 												</div>
@@ -198,14 +212,26 @@
 														placeholder="Ingrese el Nombre" type="text" maxlength="45" />
 												</div>
 											</div>
+											
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_act_serie">Serie</label>
+											
+												<label class="col-lg-3 control-label" for="id_act_presentacion">Presentación</label>
 												<div class="col-lg-3">
-													<input class="form-control" id="id_act_serie" name="serie"
-														placeholder="Ingrese el nï¿½mero de serie" type="text"
-														maxlength="45" />
-												</div>
-											</div>
+													<select id="id_act_presentacion" name="presentacion" class='form-control'>
+														<option value=" ">[Seleccione]</option>
+																<option >Huevo de Gallina</option>
+																<option >Huevo de Codorniz</option>										
+																<option >Gallina Viva</option>
+																<option >Gallina Beneficiada</option>
+																<option >Fruta</option>
+														
+													</select>
+												</div>											
+											
+											</div>	
+											
+	
+											
 											<div class="form-group">
 												<label class="col-lg-3 control-label" for="id_act_precio">Precio</label>
 												<div class="col-lg-3">
@@ -213,6 +239,10 @@
 														placeholder="Ingrese el precio" type="text" maxlength="6" />
 												</div>
 											</div>
+											
+										
+											
+											
 											<div class="form-group">
 												<label class="col-lg-3 control-label" for="id_act_stock">Stock</label>
 												<div class="col-lg-3">
@@ -223,9 +253,9 @@
 
 
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_act_marca">Marca</label>
+												<label class="col-lg-3 control-label" for="id_act_familia">Familia</label>
 												<div class="col-lg-3">
-													<select id="id_act_marca" name="marca" class='form-control'>
+													<select id="id_act_familia" name="familia" class='form-control'>
 														<option value=" ">[Seleccione]</option>
 													</select>
 												</div>
@@ -233,9 +263,9 @@
 
 
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_act_pais">Pais</label>
+												<label class="col-lg-3 control-label" for="id_act_planta">Planta</label>
 												<div class="col-lg-3">
-													<select id="id_act_pais" name="pais" class='form-control'>
+													<select id="id_act_planta" name="planta" class='form-control'>
 														<option value=" ">[Seleccione]</option>
 													</select>
 												</div>
@@ -265,19 +295,19 @@
 	<script type="text/javascript">
 
 
-		$.getJSON("listaMarca", {}, function (data) {
+		$.getJSON("listaFamilia", {}, function (data) {
 			$.each(data, function (i, item) {
-				$("#id_reg_marca").append("<option value=" + item.idMarca + ">" + item.nombre + "</option>");
-				$("#id_act_marca").append("<option value=" + item.idMarca + ">" + item.nombre + "</option>");
+				$("#id_reg_familia").append("<option value=" + item.idFamilia + ">" + item.nombre + "</option>");
+				$("#id_act_familia").append("<option value=" + item.idFamilia + ">" + item.nombre + "</option>");
 
 			});
 		});
 
 
-		$.getJSON("listaPais", {}, function (data) {
+		$.getJSON("listaPlanta", {}, function (data) {
 			$.each(data, function (i, item) {
-				$("#id_reg_pais").append("<option value=" + item.idPais + ">" + item.nombre + "</option>");
-				$("#id_act_pais").append("<option value=" + item.idPais + ">" + item.nombre + "</option>");
+				$("#id_reg_planta").append("<option value=" + item.idPlanta + ">" + item.nombre + "</option>");
+				$("#id_act_planta").append("<option value=" + item.idPlanta + ">" + item.nombre + "</option>");
 
 			});
 		});
@@ -305,14 +335,14 @@
 				columns: [
 					{ data: "idProducto" },
 					{ data: "nombre" },
-					{ data: "serie" },
+					{ data: "presentacion" },
 					{ data: "precio" },
 					{ data: "stock" },
-					{ data: "marca.nombre" },
-					{ data: "pais.nombre" },
+					{ data: "familia.nombre" },
+					{ data: "planta.nombre" },
 					{
 						data: function (row, type, val, meta) {
-							var salida = '<button type="button" style="width: 90px" class="btn btn-info btn-sm" onclick="editar(\'' + row.idProducto + '\',\'' + row.nombre + '\',\'' + row.serie + '\',\'' + row.precio + '\',\'' + row.stock + '\',\'' + row.marca.idMarca + '\',\'' + row.pais.idPais + '\')">Editar</button>';
+							var salida = '<button type="button" style="width: 90px" class="btn btn-info btn-sm" onclick="editar(\'' + row.idProducto + '\',\'' + row.nombre + '\',\'' + row.presentacion + '\',\'' + row.precio + '\',\'' + row.stock + '\',\'' + row.familia.idFamilia + '\',\'' + row.planta.idPlanta + '\')">Editar</button>';
 							return salida;
 						}, className: 'text-center'
 					},
@@ -352,24 +382,24 @@
 			});
 		}
 
-		function editar(id, nombre, serie, precio, stock, idMarca, idPais) {
+		function editar(id, nombre, presentacion, precio, stock, idFamilia, idPlanta) {
 			$('#id_ID').val(id);
 			$('#id_act_nombre').val(nombre);
-			$('#id_act_serie').val(serie);
+			$('#id_act_presentacion').val(presentacion);
 			$('#id_act_precio').val(precio);
 			$('#id_act_stock').val(stock);
-			$('#id_act_marca').val(idMarca);
-			$('#id_act_pais').val(idPais);
+			$('#id_act_familia').val(idFamilia);
+			$('#id_act_planta').val(idPlanta);
 			$('#id_div_modal_actualiza').modal("show");
 		}
 
 		function limpiarFormulario() {
 			$('#id_reg_nombre').val('');
-			$('#id_reg_serie').val('');
+			$('#id_reg_presentacion').val('');
 			$('#id_reg_precio').val('');
 			$('#id_reg_stock').val('');
-			$('#id_reg_marca').val('');
-			$('#id_reg_pais').val(' ');
+			$('#id_reg_familia').val('');
+			$('#id_reg_planta').val(' ');
 		}
 
 
@@ -445,11 +475,11 @@
 					}
 				},
 
-				"serie": {
-					selector: '#id_reg_serie',
+				"presentacion": {
+					selector: '#id_reg_presentacion',
 					validators: {
 						notEmpty: {
-							message: 'La serie es un campo obligatorio'
+							message: 'La presentación es un campo obligatorio'
 						},
 					}
 				},
@@ -507,11 +537,11 @@
 					}
 				},
 
-				"serie": {
-					selector: '#id_act_serie',
+				"presentacion": {
+					selector: '#id_act_presentacion',
 					validators: {
 						notEmpty: {
-							message: 'serie es un campo obligatorio'
+							message: 'presentacion es un campo obligatorio'
 						},
 						stringLength: {
 							message: 'La sede es de 2 a 10 caracteres',

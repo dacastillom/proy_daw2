@@ -126,7 +126,7 @@ public class PedidoController {
 		String salida = "-1";
 
 		if (objPedido != null) {
-			salida = "Se generó la boleta con código N° : " + objPedido.getIdPedido() + "<br><br>";
+			salida = "Se generó el Pedido con código N° : " + objPedido.getIdPedido() + "<br><br>";
 			salida += "Cliente: " + objPedido.getCliente().getNombres() + "<br><br>";
 			salida += "<table class=\"table\"><tr><td>Producto</td><td>Precio</td><td>Cantidad</td><td>Subtotal</td></tr>";
 			

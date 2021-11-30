@@ -17,8 +17,8 @@ public class EnlaceController {
 	@RequestMapping("/verRegistroCliente")
 	public String verRegistraCliente() {	return "intranetRegistroCliente";	}
 	
-	@RequestMapping("/verRegistroMarca")
-	public String verRegistraMarca() {	return "intranetRegistroMarca";	}
+	@RequestMapping("/verRegistroFamilia")
+	public String verRegistraFamilia() {	return "intranetRegistroFamilia";	}
 	
 	@RequestMapping("/verRegistroProveedor")
 	public String verRegistraProveedor() {	return "intranetRegistroProveedor";	}
@@ -38,7 +38,7 @@ public class EnlaceController {
 
 	//consulta
 
-	@RequestMapping("/verRegistroBoleta")
-	public String verRegistroBoleta() {	return "intranetRegistroBoleta";	}
+	@RequestMapping("/verRegistroPedido")
+	public String verRegistroPedido() {	return "intranetRegistroPedido";	}
 
 }

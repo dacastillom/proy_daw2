@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cibertec.entidad.Marca;
-import com.cibertec.servicio.MarcaServicio;
+import com.cibertec.entidad.Familia;
+import com.cibertec.servicio.FamiliaServicio;
 
 /**
  * 
@@ -18,18 +18,18 @@ import com.cibertec.servicio.MarcaServicio;
  * 
  */
 @Controller
-public class RegistraMarcaController {
+public class RegistraFamiliaController {
 	
 	@Autowired
-	private MarcaServicio marcaServicio;
+	private FamiliaServicio familiaServicio;
 	
 	@ResponseBody
-	@RequestMapping("/registraMarca")
-	public Map<String, Object> registra(Marca obj){
+	@RequestMapping("/registraFamilia")
+	public Map<String, Object> registra(Familia obj){
 		Map<String, Object> salida = new HashMap<String, Object>();
 		obj.setFechaRegistro(new Date());
 		
-		Marca objSalida = marcaServicio.insertaMarca(obj);
+		Familia objSalida = familiaServicio.insertaFamilia(obj);
 		if(objSalida== null) {
 			salida.put("MENSAJE","Registro erróneo");
 		}else {

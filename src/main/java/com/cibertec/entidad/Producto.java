@@ -21,19 +21,19 @@ public class Producto {
 	private int idProducto;
 	
 	private String nombre;
-	private String serie;
+	private String presentacion;
 	private double precio;
 	private int stock;
 
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idMarca")
-	private Marca marca;
+	@JoinColumn(name = "idFamilia")
+	private Familia familia;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idPais")
-	private Pais pais;
+	@JoinColumn(name = "idPlanta")
+	private Planta planta;
 
 	public int getIdProducto() {
 		return idProducto;
@@ -51,12 +51,12 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public String getSerie() {
-		return serie;
+	public String getPresentacion() {
+		return presentacion;
 	}
 
-	public void setSerie(String serie) {
-		this.serie = serie;
+	public void setPresentacion(String presentacion) {
+		this.presentacion = presentacion;
 	}
 
 	public double getPrecio() {
@@ -75,20 +75,20 @@ public class Producto {
 		this.stock = stock;
 	}
 
-	public Marca getMarca() {
-		return marca;
+	public Familia getFamilia() {
+		return familia;
 	}
 
-	public void setMarca(Marca marca) {
-		this.marca = marca;
+	public void setFamilia(Familia familia) {
+		this.familia = familia;
 	}
 
-	public Pais getPais() {
-		return pais;
+	public Planta getPlanta() {
+		return planta;
 	}
 
-	public void setPais(Pais pais) {
-		this.pais = pais;
+	public void setPlanta(Planta planta) {
+		this.planta = planta;
 	}
 
 	

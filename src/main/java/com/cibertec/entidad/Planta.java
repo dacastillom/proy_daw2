@@ -7,26 +7,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "pais")
-public class Pais  {
+@Table(name = "planta")
+public class Planta  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPais;
-	private String iso;
+	private int idPlanta;
 	private String nombre;
+	private String estado;
 	
-	public int getIdPais() {
-		return idPais;
+	public int getIdPlanta() {
+		return idPlanta;
 	}
-	public void setIdPais(int idPais) {
-		this.idPais = idPais;
+	public void setIdPlanta(int idPlanta) {
+		this.idPlanta = idPlanta;
 	}
-	public String getIso() {
-		return iso;
+	public String getEstado() {
+		return estado;
 	}
-	public void setIso(String iso) {
-		this.iso = iso;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	public String getNombre() {
 		return nombre;

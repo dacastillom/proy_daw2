@@ -22,26 +22,28 @@
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrapValidator.css" />
 
-    <title>La Calera</title>
+    <title>PROYECTO - La Calera</title>
 </head>
 <body>
 
     <jsp:include page="intranetCabecera.jsp" />
 
     <div class="container" style="margin-top: 5%">
-        <h3>Resumen Pedidos</h3>
+        <h3>Resumen Pedidos  - SE DEBE REALIZAR EL LISTADO DE LOS PEDIDOS</h3>
         <br><br>
-        <!-- <h4>Bienvenido Sr(a): ${sessionScope.objUsuario.nombreCompleto}</h4><br>                 -->
+        
+        	<c:forEach var="x" items="${sessionScope.objRoles}">
+		      	<h4>Bienvenido Sr(a): ${sessionScope.objUsuario.nombreCompleto} - ${x.nombre} </h4>	          
+		</c:forEach>        	
+        	
+        <br>
+	    
         <!-- <h4>DNI: ${sessionScope.objUsuario.dni}</h4><br> -->
-        <!-- <h4>Roles:</h4>
-	<ul>
-        <c:forEach var="x" items="${sessionScope.objRoles}">
-            <li>
-                   ${x.nombre} 
-            </li>
-        </c:forEach>
-    </ul><br>
-</div> -->
+
+		<br>
+		
+		
+		</div> 
 
         <div class="container">
             <div class="row" style="height: 70px">

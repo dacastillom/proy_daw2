@@ -31,7 +31,7 @@ public class Cliente {
 	private String correo;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date fechaRegistro;
 
 	private String direccion;

@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cibertec.entidad.Cliente;
-import com.cibertec.entidad.Marca;
-import com.cibertec.entidad.Pais;
+import com.cibertec.entidad.Familia;
+import com.cibertec.entidad.Planta;
 import com.cibertec.entidad.TipoReclamo;
 import com.cibertec.servicio.ClienteServicio;
-import com.cibertec.servicio.MarcaServicio;
-import com.cibertec.servicio.PaisServicio;
+import com.cibertec.servicio.FamiliaServicio;
+import com.cibertec.servicio.PlantaServicio;
 import com.cibertec.servicio.TipoReclamoServicio;
 
 @Controller
 public class ComboController {
 
 	@Autowired
-	private PaisServicio paisServicio;
+	private PlantaServicio plantaServicio;
 
 	@Autowired
-	private MarcaServicio marcaServicio;
+	private FamiliaServicio familiaServicio;
 	
 	@Autowired
 	private ClienteServicio clienteServicio;
@@ -44,15 +44,15 @@ public class ComboController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/listaPais")
-	public List<Pais> listaPais() {
-		return paisServicio.listaPais();
+	@RequestMapping("/listaPlanta")
+	public List<Planta> listaPlanta() {
+		return plantaServicio.listaPlanta();
 	}
 	
 	@ResponseBody
-	@RequestMapping("/listaMarca")
-	public List<Marca> listaMarca(){
-		return marcaServicio.listaMarca();
+	@RequestMapping("/listaFamilia")
+	public List<Familia> listaFamilia(){
+		return familiaServicio.listaFamilia();
 	}
 	
 }

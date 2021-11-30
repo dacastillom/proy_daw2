@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
-<title>GRUPO 01</title>
+<title>PROYECTO - La Calera</title>
 </head>
 <body>
 

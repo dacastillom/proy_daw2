@@ -16,29 +16,29 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "marca")
-public class Marca {
+@Table(name = "familia")
+public class Familia {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idMarca;
+	private int idFamilia;
 	private String nombre;
-	private byte estado;
+	private String grupo;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaRegistro;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idPais")
-	private Pais pais;
+	@JoinColumn(name = "idPlanta")
+	private Planta planta;
 
-	public int getIdMarca() {
-		return idMarca;
+	public int getIdFamilia() {
+		return idFamilia;
 	}
 
-	public void setIdMarca(int idMarca) {
-		this.idMarca = idMarca;
+	public void setIdFamilia(int idFamilia) {
+		this.idFamilia = idFamilia;
 	}
 
 	public String getNombre() {
@@ -49,12 +49,12 @@ public class Marca {
 		this.nombre = nombre;
 	}
 
-	public byte getEstado() {
-		return estado;
+	public String getGrupo() {
+		return grupo;
 	}
 
-	public void setEstado(byte estado) {
-		this.estado = estado;
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
 	}
 
 	public Date getFechaRegistro() {
@@ -65,12 +65,12 @@ public class Marca {
 		this.fechaRegistro = fechaRegistro;
 	}
 
-	public Pais getPais() {
-		return pais;
+	public Planta getPlanta() {
+		return planta;
 	}
 
-	public void setPais(Pais pais) {
-		this.pais = pais;
+	public void setPlanta(Planta planta) {
+		this.planta = planta;
 	}
 
 	
