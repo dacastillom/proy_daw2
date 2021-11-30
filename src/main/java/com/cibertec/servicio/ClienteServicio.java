@@ -10,7 +10,7 @@ import com.cibertec.entidad.Cliente;
 public interface ClienteServicio {
 
 	
-	public abstract List<Cliente> listaCliente();
+	public abstract List<Cliente> listaCliente();	
 	public abstract Cliente insertaActualizaCliente(Cliente obj);
 	public abstract Optional<Cliente> obtenerPorId(int idCliente);
 	public abstract void eliminarCliente(int idCliente);
