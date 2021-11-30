@@ -539,3 +539,5 @@ UNLOCK TABLES;
 
 
 
+select * from producto;
+```
