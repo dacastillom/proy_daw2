@@ -8,6 +8,10 @@ import com.cibertec.entidad.Pedido;
 
 public interface PedidoRepositorio extends JpaRepository<Pedido, Integer> {
 
+    @Query("Select a from Pedido a where estado like :fil")
+	public abstract List<Pedido> listaPorEstado(@Param("fil") String filtro);
+    
+    
     @Query("select d from Pedido d where "
     + "	(:param_cliente is -1 or d.cliente.idCliente = :param_cliente)"
     )

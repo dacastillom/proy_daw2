@@ -14,4 +14,6 @@ public interface PedidoServicio {
 
 	public List<Pedido> listaPedido();
 
+	public abstract List<Pedido> listaPorEstado(String filtro);
+
 }

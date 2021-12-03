@@ -52,4 +52,11 @@ public class PedidoServicioImpl implements PedidoServicio {
 		return pedidoRepositorio.pedidosConsultaFiltro(idCliente, fechaRegistro);
 	}
 
+	@Override
+	public List<Pedido> listaPorEstado(String filtro) {
+		return pedidoRepositorio.listaPorEstado(filtro);
+	}
+
+ 
+
 }

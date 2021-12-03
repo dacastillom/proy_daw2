@@ -32,5 +32,7 @@ public interface UsuarioServicio {
 
 	public List<Usuario> findByLogin(String nombre);
 
+	
+
 
 }

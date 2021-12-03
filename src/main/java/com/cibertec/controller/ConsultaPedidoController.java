@@ -35,10 +35,25 @@ public class ConsultaPedidoController {
 	}
 
 	@ResponseBody
-	@RequestMapping("/consultaPedidos")
+	@RequestMapping("/consultaCrudPedidoPorCliente")
 	public List<Pedido> listaPorfiltro(String fecharegistro, int idcliente) {
 		// return pedidoServicio.pedidosConsultaFiltro(idcliente, fecharegistro);
 		return pedidoServicio.pedidosConsultaFiltroCliente(idcliente);
+
+	}
+
+
+	@ResponseBody
+	@RequestMapping("/consultaCrudPedido")
+	public List<Pedido> listar() {
+		return pedidoServicio.listaPedido();
+
+	}
+
+	@ResponseBody
+	@RequestMapping("/filtroCrudPedido")
+	public List<Pedido> lista(String filtro) {
+		return pedidoServicio.listaPorEstado(filtro);
 
 	}
 
