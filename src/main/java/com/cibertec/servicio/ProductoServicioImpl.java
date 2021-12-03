@@ -24,38 +24,33 @@ public class ProductoServicioImpl implements ProductoServicio {
 
 	@Override
 	public List<Producto> listaProducto() {
-		// TODO Auto-generated method stub
 		return repositorio.findAll();
 	}
 
 	@Override
 	public Producto insertaActualizaProducto(Producto obj) {
-		// TODO Auto-generated method stub
 		return repositorio.save(obj);
 	}
 
 	@Override
 	public Optional<Producto> obtienePorId(int idProducto) {
-		// TODO Auto-generated method stub
 		return repositorio.findById(idProducto);
 	}
 
 	@Override
 	public void eliminaProducto(int id) {
-		// TODO Auto-generated method stub
 		repositorio.deleteById(id);
 	}
 
 	@Override
 	public List<Producto> listaProductoPorNombreLike(String filtro) {
-		// TODO Auto-generated method stub
 		return repositorio.listaProductoPorNombreLike(filtro);
 	}
 
 	
 	//adicionado 10 de Junio - David Castillo
 	@Override
-	public List<Producto> listaproducto(String filtro, Pageable pegable) {
+	public List<Producto> listaPorFiltroproducto(String filtro, Pageable pegable) {
 		return repositorio.listaproducto(filtro, pegable);
 	}
 
@@ -63,5 +58,4 @@ public class ProductoServicioImpl implements ProductoServicio {
 	public List<Producto> obtienePorNombre(String nombre, int idProducto) {
 		return repositorio.findByNombreAndIdProducto(nombre, idProducto);
 	}
-
 }

@@ -56,7 +56,7 @@ public class PedidoController {
 		int page = 0;
 		int size = 5; //La consulta tenga tamaño 5
 		Pageable pageable = PageRequest.of(page, size);
-		return productoServicio.listaproducto("%"+filtro+"%", pageable);
+		return productoServicio.listaPorFiltroproducto("%"+filtro+"%", pageable);
 
 	}
 	

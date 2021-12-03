@@ -104,28 +104,30 @@
 														placeholder="Ingrese el Nombre" type="text" maxlength="20" />
 												</div>
 											</div>
-											
-											
-											
+
+
+
 											<div class="form-group">
-											
-												<label class="col-lg-3 control-label" for="id_reg_presentacion">Presentaci�n</label>
+
+												<label class="col-lg-3 control-label"
+													for="id_reg_presentacion">Presentaci�n</label>
 												<div class="col-lg-3">
-													<select id="id_reg_presentacion" name="presentacion" class='form-control'>
+													<select id="id_reg_presentacion" name="presentacion"
+														class='form-control'>
 														<option value=" ">[Seleccione]</option>
-																<option >Huevo de Gallina</option>
-																<option >Huevo de Codorniz</option>										
-																<option >Gallina Viva</option>
-																<option >Gallina Beneficiada</option>
-																<option >Fruta</option>
-																
-														
+														<option>Huevo de Gallina</option>
+														<option>Huevo de Codorniz</option>
+														<option>Gallina Viva</option>
+														<option>Gallina Beneficiada</option>
+														<option>Fruta</option>
+
+
 													</select>
-												</div>		
-												
-										</div>									
-												
-											
+												</div>
+
+											</div>
+
+
 											<div class="form-group">
 												<label class="col-lg-3 control-label" for="id_reg_precio">Precio</label>
 												<div class="col-lg-3">
@@ -142,7 +144,8 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_reg_familia">Familia</label>
+												<label class="col-lg-3 control-label"
+													for="id_reg_familia">Familia</label>
 												<div class="col-lg-3">
 													<select id="id_reg_familia" name="familia" class='form-control'>
 														<option value=" ">[Seleccione]</option>
@@ -211,26 +214,28 @@
 														placeholder="Ingrese el Nombre" type="text" maxlength="45" />
 												</div>
 											</div>
-											
+
 											<div class="form-group">
-											
-												<label class="col-lg-3 control-label" for="id_act_presentacion">Presentaci�n</label>
+
+												<label class="col-lg-3 control-label"
+													for="id_act_presentacion">Presentaci�n</label>
 												<div class="col-lg-3">
-													<select id="id_act_presentacion" name="presentacion" class='form-control'>
+													<select id="id_act_presentacion" name="presentacion"
+														class='form-control'>
 														<option value=" ">[Seleccione]</option>
-																<option >Huevo de Gallina</option>
-																<option >Huevo de Codorniz</option>										
-																<option >Gallina Viva</option>
-																<option >Gallina Beneficiada</option>
-																<option >Fruta</option>
-														
+														<option>Huevo de Gallina</option>
+														<option>Huevo de Codorniz</option>
+														<option>Gallina Viva</option>
+														<option>Gallina Beneficiada</option>
+														<option>Fruta</option>
+
 													</select>
-												</div>											
-											
-											</div>	
-											
-	
-											
+												</div>
+
+											</div>
+
+
+
 											<div class="form-group">
 												<label class="col-lg-3 control-label" for="id_act_precio">Precio</label>
 												<div class="col-lg-3">
@@ -238,10 +243,10 @@
 														placeholder="Ingrese el precio" type="text" maxlength="6" />
 												</div>
 											</div>
-											
-										
-											
-											
+
+
+
+
 											<div class="form-group">
 												<label class="col-lg-3 control-label" for="id_act_stock">Stock</label>
 												<div class="col-lg-3">
@@ -252,7 +257,8 @@
 
 
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_act_familia">Familia</label>
+												<label class="col-lg-3 control-label"
+													for="id_act_familia">Familia</label>
 												<div class="col-lg-3">
 													<select id="id_act_familia" name="familia" class='form-control'>
 														<option value=" ">[Seleccione]</option>
@@ -294,6 +300,11 @@
 	<script type="text/javascript">
 
 
+		$.getJSON("consultaCrudProducto", function (lista) {
+			agregarGrilla(lista);
+		});
+
+
 		$.getJSON("listaFamilia", {}, function (data) {
 			$.each(data, function (i, item) {
 				$("#id_reg_familia").append("<option value=" + item.idFamilia + ">" + item.nombre + "</option>");
@@ -315,7 +326,8 @@
 
 		$("#id_btn_filtrar").click(function () {
 			var fil = $("#id_txt_filtro").val();
-			$.getJSON("consultaCrudProducto", { "filtro": fil }, function (lista) {
+			$.getJSON("consultaPorFiltroCrudProducto", { "filtro": fil }, function (lista) {
+				console.info('--consultaPorFiltroCrudProducto->', lista)
 				agregarGrilla(lista);
 			});
 		});

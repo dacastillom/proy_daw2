@@ -15,9 +15,8 @@ public interface ProductoServicio {
 	public abstract Optional<Producto> obtienePorId(int idProducto);
 	public abstract void eliminaProducto(int id);
 	public abstract List<Producto> listaProductoPorNombreLike(String filtro);
-
 	
 	public abstract List<Producto> obtienePorNombre(String nombre, int idProducto);
 	//adicionado 10 Junio - David Castillo
-	public List<Producto> listaproducto(String filtro, Pageable pageable);
+	public List<Producto> listaPorFiltroproducto(String filtro, Pageable pageable);
 }

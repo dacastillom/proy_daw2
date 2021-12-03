@@ -52,8 +52,6 @@
                         <option >Aprobado</option>										
                         <option >Reprogramado</option>										
                         <option >Anulado</option>
-                        <option >En espera</option>
-                        <option >Pagado</option>
                     </select>
                 </div>
             </div>
@@ -64,12 +62,12 @@
                     FILTRA
                 </button>
             </div>
-            <div class="col-md-2">
-                <button type="button" data-toggle="modal" data-target="#id_div_modal_registra" class="btn btn-success"
+            <!-- <div class="col-md-2">
+                <button type="button" data-toggle="modal" data-target="#id_div_modal_registra" class="btn btn-success" id="btnRegistrar"
                     style="width: 150px">
                     REGISTRA
                 </button>
-            </div>
+            </div> -->
         </div>
 
         <div class="row">
@@ -109,6 +107,7 @@
                 agregarGrilla(lista);
             });
         });
+
 
         // function limpiarFormulario() {
         //     $('#id_reg_nombres').val('');

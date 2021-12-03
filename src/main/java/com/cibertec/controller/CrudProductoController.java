@@ -27,16 +27,19 @@ public class CrudProductoController {
 	
 	@Autowired
 	private ProductoServicio productoServicio;
-
-	
 	
 	@RequestMapping("/consultaCrudProducto")
 	@ResponseBody
-	public List<Producto> lisaProductos(String filtro){
+	public List<Producto> lisaProductos(){
+		return productoServicio.listaProducto();
+	}
+	
+	@RequestMapping("/consultaPorFiltroCrudProducto")
+	@ResponseBody
+	public List<Producto> lisaPorFiltroProductos(String filtro){
 		return productoServicio.listaProductoPorNombreLike(filtro.trim() + "%");
 	}
 	
-
 	@RequestMapping("/registraCrudProducto")
 	@ResponseBody
 	public Map<String, Object> insertaProducto(Producto obj){
