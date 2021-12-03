@@ -69,53 +69,53 @@
 
 
     <script type="text/javascript">
-        $("#success-alert").fadeTo(1000, 500).slideUp(500, function () {
-            $("#success-alert").slideUp(500);
-        });
+        // $("#success-alert").fadeTo(1000, 500).slideUp(500, function () {
+        //     $("#success-alert").slideUp(500);
+        // });
     </script>
 
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#id_form').bootstrapValidator({
-                message: 'This value is not valid',
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
-                fields: {
-                    dni: {
-                        validators: {
-                            notEmpty: {
-                                message: 'El usuario es obligatorio'
-                            },
-                            stringLength: {
-                                message: 'El usuario es de 3 a 20 caracteres',
-                                min: 3,
-                                max: 20
-                            }
-                        }
-                    },
-                    password: {
-                        validators: {
-                            notEmpty: {
-                                message: 'La contrase�a es obligatorio'
-                            },
-                            stringLength: {
-                                message: 'La contrase�a es de 3 a 20 caracteres',
-                                min: 3,
-                                max: 20
-                            }
-                        }
-                    }
-                }
-            });
+        // $(document).ready(function () {
+        //     $('#id_form').bootstrapValidator({
+        //         message: 'This value is not valid',
+        //         feedbackIcons: {
+        //             valid: 'glyphicon glyphicon-ok',
+        //             invalid: 'glyphicon glyphicon-remove',
+        //             validating: 'glyphicon glyphicon-refresh'
+        //         },
+        //         fields: {
+        //             dni: {
+        //                 validators: {
+        //                     notEmpty: {
+        //                         message: 'El usuario es obligatorio'
+        //                     },
+        //                     stringLength: {
+        //                         message: 'El usuario es de 3 a 20 caracteres',
+        //                         min: 3,
+        //                         max: 20
+        //                     }
+        //                 }
+        //             },
+        //             password: {
+        //                 validators: {
+        //                     notEmpty: {
+        //                         message: 'La contrase�a es obligatorio'
+        //                     },
+        //                     stringLength: {
+        //                         message: 'La contrase�a es de 3 a 20 caracteres',
+        //                         min: 3,
+        //                         max: 20
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     });
 
-            $('#validateBtn').click(function () {
-                $('#id_form').bootstrapValidator('validate');
-            });
-        });
+            // $('#validateBtn').click(function () {
+            //     $('#id_form').bootstrapValidator('validate');
+            // });
+        // });
     </script>
 
 </body>

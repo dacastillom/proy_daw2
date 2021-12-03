@@ -23,22 +23,12 @@ public class LoginController {
 
 	@RequestMapping("/login")
 	public String login(Usuario user, HttpSession session, HttpServletRequest request) {
-		/* Usuario usuario = servicio.login(user);
-		if (usuario == null) {
-			request.setAttribute("mensaje", "El usuario no existe");
-			return "intranetLogin";
-		} else {
-			List<Opcion> menus = servicio.traerEnlacesDeUsuario(usuario.getIdUsuario());
-			List<Rol> roles = servicio.traerRolesDeUsuario(usuario.getIdUsuario());
-
-			session.setAttribute("objUsuario", usuario);
-			session.setAttribute("objMenus", menus);
-			session.setAttribute("objRoles", roles);
-
-			return "intranetHome";
-		} */
-
 		return "intranetLogin";
+	}
+
+	@RequestMapping("/menu")
+	public String menu() {
+		return "redirect:/verIntranetHome"; // intranetSample intranetHome redirect:/postulante/
 	}
 
 	@RequestMapping("/logout")
