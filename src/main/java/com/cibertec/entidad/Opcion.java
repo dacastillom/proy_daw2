@@ -6,7 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.ToString;
+
 @Entity
+@ToString
 @Table(name = "opcion")
 public class Opcion {
 

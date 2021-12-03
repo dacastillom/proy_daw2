@@ -1,4 +1,3 @@
-<jsp:include page="intranetValida.jsp" />
 <!DOCTYPE html>
 <html lang="esS">
 
@@ -59,7 +58,7 @@
 								<tr>
 									<th style="width: 5%">ID</th>
 									<th style="width: 35%">Nombre</th>
-									<th style="width: 8%">Presentación</th>
+									<th style="width: 8%">Presentaciï¿½n</th>
 									<th style="width: 8%">Precio</th>
 									<th style="width: 8%">Stock</th>
 									<th style="width: 8%">Familia</th>
@@ -110,7 +109,7 @@
 											
 											<div class="form-group">
 											
-												<label class="col-lg-3 control-label" for="id_reg_presentacion">Presentación</label>
+												<label class="col-lg-3 control-label" for="id_reg_presentacion">Presentaciï¿½n</label>
 												<div class="col-lg-3">
 													<select id="id_reg_presentacion" name="presentacion" class='form-control'>
 														<option value=" ">[Seleccione]</option>
@@ -215,7 +214,7 @@
 											
 											<div class="form-group">
 											
-												<label class="col-lg-3 control-label" for="id_act_presentacion">Presentación</label>
+												<label class="col-lg-3 control-label" for="id_act_presentacion">Presentaciï¿½n</label>
 												<div class="col-lg-3">
 													<select id="id_act_presentacion" name="presentacion" class='form-control'>
 														<option value=" ">[Seleccione]</option>
@@ -479,7 +478,7 @@
 					selector: '#id_reg_presentacion',
 					validators: {
 						notEmpty: {
-							message: 'La presentación es un campo obligatorio'
+							message: 'La presentaciï¿½n es un campo obligatorio'
 						},
 					}
 				},

@@ -1,4 +1,3 @@
-<jsp:include page="intranetValida.jsp" />
 <!DOCTYPE html>
 <html lang="esS" >
 <head>
@@ -90,7 +89,7 @@
 							<div class="form-group col-md-4">
 								<label class="col-lg-2 control-label">Lugar Entrega</label>
 								<div class="col-lg-8"> 
-									<input type="text" name="fechaEntrega" id="id_lugar_entrega" placeholder="Ingrese la dirección" required class="form-control" />
+									<input type="text" name="fechaEntrega" id="id_lugar_entrega" placeholder="Ingrese la direcciï¿½n" required class="form-control" />
 								</div>
 							</div>
 					</div>
@@ -98,7 +97,7 @@
 			</div>	
 				
 				<div class="panel panel-default">
-					<div class="panel-heading">Selección de Producto</div>
+					<div class="panel-heading">Selecciï¿½n de Producto</div>
 						<div class="panel-body">
 							<div class="form-group  col-md-4" >
 								<div class="col-lg-2">
@@ -150,7 +149,7 @@
 									<table id="id_table_boleta" class="table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th style="text-align:center; width: 5%">Código</th>
+												<th style="text-align:center; width: 5%">Cï¿½digo</th>
 												<th style="text-align:center;width: 30%">Nombre</th>
 												<th style="text-align:center;width: 20%">Precio</th>
 												<th style="text-align:center;width: 10%">Cantidad</th>

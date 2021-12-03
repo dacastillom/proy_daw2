@@ -1,4 +1,3 @@
-<jsp:include page="intranetValida.jsp" />
 <!DOCTYPE html>
 <html lang="esS">
 
@@ -60,7 +59,7 @@
                                     <th style="width: 12%">DNI</th>
                                     <th style="width: 15%">Correo</th>
                                     <th style="width: 12%">Fec de registro.</th>
-                                    <th style="width: 8%">Dirección</th>
+                                    <th style="width: 8%">Direcciï¿½n</th>
                                     <th style="width: 8%">Estado </th>
                                     <th style="width: 12%">ID de ubigeo </th>
                                     <th style="width: 8%"> Actualiza </th>
@@ -119,10 +118,10 @@
                                                         placeholder="Ingrese el correo" type="text" />
                                                 </div>
                                                 <label class="col-lg-2 control-label" for="id_reg_direccion"
-                                                    style="text-align: left;">Dirección</label>
+                                                    style="text-align: left;">Direcciï¿½n</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_reg_direccion" name="direccion"
-                                                        placeholder="Ingrese su dirección" type="text" maxlength="40" />
+                                                        placeholder="Ingrese su direcciï¿½n" type="text" maxlength="40" />
                                                 </div>
                                             </div>
 
@@ -232,7 +231,7 @@
                                                         placeholder="Ingrese el correo" type="text" />
                                                 </div>
                                                 <label class="col-lg-2 control-label" for="id_act_direccion"
-                                                    style="text-align: left;">Dirección</label>
+                                                    style="text-align: left;">Direcciï¿½n</label>
                                                 <div class="col-lg-4">
                                                     <input class="form-control" id="id_act_direccion" name="direccion"
                                                         placeholder="Ingrese su direcciÃ³n" type="text" maxlength="40" />
@@ -680,7 +679,7 @@
                         stringLength: {
                             min: 3,
                             max: 40,
-                            message: 'La dirección debe ser de 3 a 40 caracteres'
+                            message: 'La direcciï¿½n debe ser de 3 a 40 caracteres'
                         },
                     }
                 },

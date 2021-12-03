@@ -7,6 +7,8 @@ import org.springframework.data.domain.Pageable;
 
  
 import com.cibertec.entidad.Usuario;
+import com.cibertec.entidad.Opcion;
+import com.cibertec.entidad.Rol;
 import com.cibertec.entidad.UsuarioHasRol;
 
 public interface UsuarioServicio {
@@ -15,9 +17,9 @@ public interface UsuarioServicio {
 
 	public abstract Usuario Singin(String login);
 	
-	// public abstract List<Opcion> traerEnlacesDeUsuario(int idUsuario);
+	public abstract List<Opcion> traerEnlacesDeUsuario(int idUsuario);
 
-	// public abstract List<Rol> traerRolesDeUsuario(int idUsuario);
+	public abstract List<Rol> traerRolesDeUsuario(int idUsuario);
 
 	public UsuarioHasRol saveHasRol(UsuarioHasRol  bean);
 	public Page<Usuario> findAll(Pageable pageable);
@@ -27,5 +29,8 @@ public interface UsuarioServicio {
 	public Usuario save(Usuario bean);
 
 	public void delete(int id);
+
+	public List<Usuario> findByLogin(String nombre);
+
 
 }

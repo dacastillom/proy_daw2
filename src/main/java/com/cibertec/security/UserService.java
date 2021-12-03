@@ -1,10 +1,13 @@
 package com.cibertec.security;
 
-import java.util.Collection;
-
 import java.util.HashSet;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import com.cibertec.entidad.Opcion;
+import com.cibertec.entidad.Rol;
 import com.cibertec.entidad.Usuario;
 import com.cibertec.servicio.UsuarioServicio;
 
@@ -20,12 +23,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements UserDetailsService {
 
-    @Autowired
+	@Autowired
 	private UsuarioServicio usuarioService;
 
-    @Override
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserDetails userDet = null;
+
+		Map<String, Object> salida = new HashMap<String, Object>();
 
 		Usuario bean;
 		bean = usuarioService.Singin(username);
@@ -34,8 +39,9 @@ public class UserService implements UserDetailsService {
 		// adicionar a rol
 
 		rol.add(new SimpleGrantedAuthority("ADMIN"));
-		//rol.add(new SimpleGrantedAuthority(bean.getRol().getDescripcion()));
+		// rol.add(new SimpleGrantedAuthority(bean.getRol().getDescripcion()));
 		// crear objeto userDet
+
 		userDet = new User(username, bean.getPassword(), rol);
 
 		return userDet;
