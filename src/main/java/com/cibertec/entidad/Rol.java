@@ -6,9 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
+@ToString
+@Getter
+@Setter
 @Table(name = "rol")
 public class Rol {
+
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,28 +25,6 @@ public class Rol {
 	private String nombre;
 	private byte estado;
 
-	public int getIdRol() {
-		return idRol;
-	}
-
-	public void setIdRol(int idRol) {
-		this.idRol = idRol;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public byte getEstado() {
-		return estado;
-	}
-
-	public void setEstado(byte estado) {
-		this.estado = estado;
-	}
-
+ 
+	 
 }

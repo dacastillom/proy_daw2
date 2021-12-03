@@ -34,14 +34,13 @@
 
 <body>
 
-
     <div class="top-content">
         <div class="inner-bg">
             <div class="container">
-                <c:if test="${requestScope.mensaje != null}">
+                <c:if test="${param.error}">
                     <div class="alert alert-danger fade in" id="success-alert">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong>${requestScope.mensaje}</strong>
+                        <strong>Credenciales erroneas</strong>
                     </div>
                 </c:if>
                 <h1 class="text-center bold" style="margin-bottom: 50px;">La Calera</h1>
@@ -49,14 +48,14 @@
                         <img class="img-fluid" width="150" alt="la-calera" src="https://ciber-la-calera.web.app/static/media/lacalera.95cc6217.png"/>
                         <form id="id_form" action="login" method="post" class="login-form">
                             <div class="form-group">
-                                <label class="sr-only" for="form-username">Usuario</label>
-                                <input type="text" name="login" placeholder="Ingrese Usuario"
-                                    class="form-username form-control" id="form-username" maxlength="20" value="luis">
+                                <label class="sr-only" for="login">Usuario</label>
+                                <input type="text" name="login" id="login" placeholder="Ingrese Usuario"
+                                    class="form-username form-control">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="form-password">Clave</label>
+                                <label class="sr-only" for="password">Clave</label>
                                 <input type="password" name="password" placeholder="Clave..."
-                                    class="form-password form-control" id="form-password" maxlength="20" value="luis">
+                                    class="form-password form-control" id="password" maxlength="20" value="">
                             </div>
                             <button type="submit" class="btn btn-dark" style="width: 100%;" >Ingresar</button>
                         </form>

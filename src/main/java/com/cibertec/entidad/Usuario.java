@@ -14,7 +14,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.ToString;
 
+@ToString
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -32,7 +34,7 @@ public class Usuario {
 	private Date fechaRegistro;
 	
 	private String direccion;
-	private byte estado;
+	private int estado;
 
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -107,11 +109,11 @@ public class Usuario {
 		this.direccion = direccion;
 	}
 
-	public byte getEstado() {
+	public int getEstado() {
 		return estado;
 	}
 
-	public void setEstado(byte estado) {
+	public void setEstado(int estado) {
 		this.estado = estado;
 	}
 

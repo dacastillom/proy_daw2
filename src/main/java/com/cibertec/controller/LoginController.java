@@ -21,11 +21,9 @@ public class LoginController {
 	@Autowired
 	private UsuarioServicio servicio;
 
-
-
 	@RequestMapping("/login")
 	public String login(Usuario user, HttpSession session, HttpServletRequest request) {
-		Usuario usuario = servicio.login(user);
+		/* Usuario usuario = servicio.login(user);
 		if (usuario == null) {
 			request.setAttribute("mensaje", "El usuario no existe");
 			return "intranetLogin";
@@ -38,7 +36,9 @@ public class LoginController {
 			session.setAttribute("objRoles", roles);
 
 			return "intranetHome";
-		}
+		} */
+
+		return "intranetLogin";
 	}
 
 	@RequestMapping("/logout")

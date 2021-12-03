@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import lombok.ToString;
 
+
+@ToString
 @Entity
 @Table(name = "usuario_has_rol")
 public class UsuarioHasRol {
