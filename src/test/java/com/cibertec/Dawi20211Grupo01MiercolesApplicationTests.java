@@ -69,8 +69,6 @@ class Dawi20211Grupo01MiercolesApplicationTests {
 		usurpk.setIdUsuario(bean.getIdUsuario());
 
 		usr.setUsuarioHasRolPk(usurpk);
-
-		System.out.println("-->>>INICIA INSERT saveHasRol  >>" + bean.toString());
 		// save tb usuario_has_rol
 		usuarioService.saveHasRol(usr);
 

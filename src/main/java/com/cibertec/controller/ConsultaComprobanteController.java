@@ -28,7 +28,6 @@ public class ConsultaComprobanteController {
 	public List<Comprobante> listaComrpobantePorCodigoCliente(int idCliente) {
 		List<Comprobante> obj = comprobanteServicio.listaComprobantePorCodigoCliente(idCliente);
 
-		System.out.println(obj);
 		if (obj.size() == 0) {
 			return comprobanteServicio.listaComprobante();
 		} else {

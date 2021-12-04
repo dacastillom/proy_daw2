@@ -102,9 +102,7 @@ public class CrudProductoController {
 		Map<String, Object> salida = new HashMap<>();
 		try {
 			Optional<Producto> optProducto = productoServicio.obtienePorId(id);
-			System.out.println("optProducto" + optProducto);
 			if(optProducto.isPresent()) {
-				System.out.println("true");
 				productoServicio.eliminaProducto(id);
 				salida.put("mensaje", "Producto eliminado exitosamente");
 			}else {

@@ -27,7 +27,6 @@ public class ConsultaProveedorController {
 	public List<Proveedor> listaPorRucAndRazonSocial(String ruc, String razonsocial) {
 		List<Proveedor> obj = proveedorServicio.listaPorRucAndRazonSocial(ruc, razonsocial);
 
-		System.out.println(obj);
 		if (obj.size() == 0) {
 			return proveedorServicio.listaProveedor();
 		} else {

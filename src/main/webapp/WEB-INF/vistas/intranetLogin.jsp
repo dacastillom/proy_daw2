@@ -12,10 +12,6 @@
     <meta http-equiv="Cache-Control" content="no-store" />
     <meta http-equiv="Pragma" content="no-cache" />
 
-    <!-- <script src="js/jquery.min.js"></script> -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-    <!-- <script src="js/bootstrapValidator.js"></script> -->
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -45,79 +41,26 @@
                 </c:if>
                 <h1 class="text-center bold" style="margin-bottom: 50px;">La Calera</h1>
                 <div class="d-flex flex-column justify-content-center align-items-center">
-                        <img class="img-fluid" width="150" alt="la-calera" src="https://ciber-la-calera.web.app/static/media/lacalera.95cc6217.png"/>
-                        <form id="id_form" action="login" method="post" class="login-form">
-                            <div class="form-group">
-                                <label class="sr-only" for="login">Usuario</label>
-                                <input type="text" name="login" id="login" placeholder="Ingrese Usuario"
-                                    class="form-username form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="password">Clave</label>
-                                <input type="password" name="password" placeholder="Clave..."
-                                    class="form-password form-control" id="password" maxlength="20" value="">
-                            </div>
-                            <button type="submit" class="btn btn-dark" style="width: 100%;" >Ingresar</button>
-                        </form>
+                    <img class="img-fluid" width="150" alt="la-calera"
+                        src="https://ciber-la-calera.web.app/static/media/lacalera.95cc6217.png" />
+                    <form id="id_form" action="login" method="post" class="login-form">
+                        <div class="form-group">
+                            <label class="sr-only" for="login">Usuario</label>
+                            <input type="text" name="login" id="login" placeholder="Ingrese Usuario"
+                                class="form-username form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="password">Clave</label>
+                            <input type="password" name="password" placeholder="Clave..."
+                                class="form-password form-control" id="password" maxlength="20" value="">
+                        </div>
+                        <button type="submit" class="btn btn-dark" style="width: 100%;">Ingresar</button>
+                    </form>
                 </div>
 
             </div>
         </div>
-
     </div>
-
-
-
-    <script type="text/javascript">
-        // $("#success-alert").fadeTo(1000, 500).slideUp(500, function () {
-        //     $("#success-alert").slideUp(500);
-        // });
-    </script>
-
-
-    <script type="text/javascript">
-        // $(document).ready(function () {
-        //     $('#id_form').bootstrapValidator({
-        //         message: 'This value is not valid',
-        //         feedbackIcons: {
-        //             valid: 'glyphicon glyphicon-ok',
-        //             invalid: 'glyphicon glyphicon-remove',
-        //             validating: 'glyphicon glyphicon-refresh'
-        //         },
-        //         fields: {
-        //             dni: {
-        //                 validators: {
-        //                     notEmpty: {
-        //                         message: 'El usuario es obligatorio'
-        //                     },
-        //                     stringLength: {
-        //                         message: 'El usuario es de 3 a 20 caracteres',
-        //                         min: 3,
-        //                         max: 20
-        //                     }
-        //                 }
-        //             },
-        //             password: {
-        //                 validators: {
-        //                     notEmpty: {
-        //                         message: 'La contrase�a es obligatorio'
-        //                     },
-        //                     stringLength: {
-        //                         message: 'La contrase�a es de 3 a 20 caracteres',
-        //                         min: 3,
-        //                         max: 20
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     });
-
-            // $('#validateBtn').click(function () {
-            //     $('#id_form').bootstrapValidator('validate');
-            // });
-        // });
-    </script>
-
 </body>
 
 </html>

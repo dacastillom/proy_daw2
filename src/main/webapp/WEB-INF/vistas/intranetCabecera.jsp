@@ -16,23 +16,6 @@
 				</ul>
 
 				<ul class="nav navbar-nav">
-					<!-- <li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Registrar<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<c:forEach var="x" items="${sessionScope.objMenus}">
-								<c:if test="${x.tipo ==1}">
-									<li>
-										<a href="${x.ruta}">
-											${x.nombre}
-										</a>
-									</li>
-								</c:if>
-							</c:forEach>
-						</ul>
-					</li> -->
-
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							Mantenimiento<b class="caret"></b>
@@ -50,23 +33,6 @@
 						</ul>
 					</li>
 
-					<!-- <li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Consultas<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<c:forEach var="x" items="${sessionScope.objMenus}">
-								<c:if test="${x.tipo ==3}">
-									<li>
-										<a href="${x.ruta}">
-											${x.nombre}
-										</a>
-									</li>
-								</c:if>
-							</c:forEach>
-						</ul>
-					</li> -->
-
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							Ventas<b class="caret"></b>
@@ -83,7 +49,6 @@
 							</c:forEach>
 						</ul>
 					</li>
-
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
